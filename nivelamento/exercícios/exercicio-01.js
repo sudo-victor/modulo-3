@@ -6,7 +6,7 @@ const repository = []
 function createCar() {}
 
 // Crie uma funçao que recebe um id por parametro e retorna o objeto referente
-// Parametros: id(string)
+// Parametros: id(string) 
 // Returno(Objeto): id(string), modelo(string), cor(string), ano(number), createdAt(Date)
 function findCarById() {}
 

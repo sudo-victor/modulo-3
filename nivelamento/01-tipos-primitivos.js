@@ -7,6 +7,7 @@
 // boolean: que representa os valores verdadeiro (true) ou falso (false).
 
 // undefined: que representa um valor indefinido ou vazio. Uma variável é considerada
+
 // indefinida se não foi atribuído nenhum valor a ela.
 
 // null: que representa a ausência intencional de qualquer objeto ou valor.

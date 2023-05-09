@@ -15,27 +15,61 @@ const myArray = [1, 2, 3, 4, 5];
 // construtor Array. Você pode passar os elementos como argumentos para o construtor. Exemplo:
 
 const myArrayMadeByConstructor = new Array(1, 2, 3, 4, 5);
+const teste = new Array("asd", {}, 1)
 
 // Array.from(): é uma função estática do objeto Array que cria um novo array
 // a partir de um objeto semelhante a uma matriz ou iterável. Exemplo:
 
 const myString = "hello";
-const myArrayWithFromFunction = Array.from(myString);
+const teste2 = [1, 2, 3]
+const myArrayWithFromFunction = Array.from(teste2);
 
 // Métodos famosos
 
-// push
-// pop
-// shift
-// unshift
-// reduce
-// map
-// filter
-// find
+// push - adiciona o item na ultima posiçao
+myArrayWithFromFunction.push(7, 2, "")
+// pop - remove o item na ultima posiçao
+myArrayWithFromFunction.pop()
+// unshift - adiciona o item na primeira posiçao
+myArrayWithFromFunction.unshift(7, 2, "")
+// shift - remove o item na primeira posiçao
+myArrayWithFromFunction.shift()
+
+// ITERACAO
+
+// map - percorre cada item, formata e retorna um array diferente
+// filter - ele filtra o array e retorna um array novo
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8]
+const apenasNumerosImpares = numeros.filter((numeroAtual) => {
+  return (numeroAtual % 2) !== 0
+})
+// find - ele percorre cada item, e retorna o primeiro encontrado com uma certa lógica
+// findIndex - ele percorre cada item, e retorna o index do primeiro encontrado com uma certa lógica
+// reduce - 
+
+const produtos = [
+  {
+    nome: 'Carro',
+    preco: 1234
+  },
+  {
+    nome: 'Cadeira',
+    preco: 12345
+  }
+]
+
+const subtotal = produtos.reduce((valorAnterior, valorAtual) => {
+  return valorAnterior + valorAtual.preco
+}, 0)
+
+// PROTOTYPE CHAIN
 
 // 2 - Objects: são coleções de pares chave-valor, onde cada chave é uma string e o
 // valor pode ser de qualquer tipo de dados. Os objetos são usados ​​para representar
 // entidades do mundo real, como usuários, produtos e assim por diante.
+
+// CHAVES -> String || Symbol
+// VALORES -> TODOS
 
 // Objeto literal: é a forma mais simples e comum de criar um objeto,
 // usando chaves {} e separando cada propriedade por vírgulas. Exemplo:
@@ -45,6 +79,11 @@ const person = {
   age: 30,
   city: 'New York'
 };
+
+const eu = {
+  name: 'Victor',
+  estado: 'RJ'
+}
 
 // Função construtora: é uma função que pode ser usada para criar um novo objeto
 // com o operador new. As propriedades do objeto são definidas na função
@@ -85,6 +124,9 @@ class Person {
 const personClasse = new Person('John', 30, 'New York');
 
 // Métodos famosos
-
-// keys
-// values
+{
+  name: 'victor'
+}
+[['name', 'victor']]
+// keys - retorna um array, os items sao as chaves do objeto
+// values - retorna os valores
