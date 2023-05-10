@@ -2,11 +2,11 @@
 
 /**
  * 
- * 1 -
- * 2 -
- * 3 -
- * 4 -
- * 5 -
+ * 1 - function
+ * 2 - nomeDaFunçao
+ * 3 - parametros
+ * 4 - corpo
+ * 5 - retorno
  * 
  */
 
@@ -14,8 +14,8 @@
 
 /**
  * 
- *  1 -
- *  2 -
+ *  1 - Declaraçao
+ *  2 - Execuçao
  * 
  */
 
@@ -54,6 +54,7 @@ const myArrowFunction = (param1, param2) => {
 const closureFunction = () => {
   // Corpo da função
   // Pode incluir declarações de variáveis, operações lógicas, loops, etc.
+  return () => {}
 }
 
 // Padrao Factory
@@ -65,7 +66,18 @@ const closureFunction = () => {
 
 // Factory para criar objetos de forma dinâmica
 function criarPessoa(nome, idade) {
+
   // código
+  const pessoa = {
+    id: 'pessoa_id' + new Date(),
+    nome,
+    idade,
+    imprimir: function() {
+      console.log(`Meu nome é ${this.nome} e tenho ${this.idade} anos`)
+    }
+  }
+
+  return pessoa
 }
 
 // Criação de objetos usando a factory
@@ -73,5 +85,5 @@ const pessoa1 = criarPessoa("João", 30);
 const pessoa2 = criarPessoa("Maria", 25);
 
 // Chamada do método imprimir em cada objeto
-// pessoa1.imprimir(); // imprime "Meu nome é João e eu tenho 30 anos."
-// pessoa2.imprimir(); // imprime "Meu nome é Maria e eu tenho 25 anos."
+pessoa1.imprimir(); // imprime "Meu nome é João e eu tenho 30 anos."
+pessoa2.imprimir(); // imprime "Meu nome é Maria e eu tenho 25 anos."
