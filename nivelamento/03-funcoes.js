@@ -1,4 +1,25 @@
-// Declaração de função: é a forma mais comum e simples de declarar uma função.
+// Sintaxe da Funçao
+
+/**
+ * 
+ * 1 -
+ * 2 -
+ * 3 -
+ * 4 -
+ * 5 -
+ * 
+ */
+
+// Estados de uma funçao
+
+/**
+ * 
+ *  1 -
+ *  2 -
+ * 
+ */
+
+// Declaração de função literal: é a forma mais comum e simples de declarar uma função.
 // Basta usar a palavra-chave function seguida do nome da função e seus parâmetros
 // entre parênteses, e o corpo da função entre chaves. Exemplo:
 
@@ -24,6 +45,16 @@ const myArrowFunction = (param1, param2) => {
   // Corpo da função
   // Pode incluir declarações de variáveis, operações lógicas, loops, etc.
 };
+
+// Closure Function: Uma closure function (função de fechamento) em JavaScript
+// é uma função que tem acesso a variáveis ​​em seu escopo externo, mesmo após a
+// execução da função ter sido concluída. Essa funcionalidade é possível devido
+// à maneira como o JavaScript lida com a escopagem de variáveis.
+
+const closureFunction = () => {
+  // Corpo da função
+  // Pode incluir declarações de variáveis, operações lógicas, loops, etc.
+}
 
 // Padrao Factory
 
