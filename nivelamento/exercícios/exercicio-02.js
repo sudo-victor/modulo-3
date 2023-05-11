@@ -12,7 +12,6 @@ const repository = []
 // }
 function makeStudent(data) {}
 
-
 // Crie as funçao para manipular a constante repository
 // Deve ser possível:
 // - Criar;

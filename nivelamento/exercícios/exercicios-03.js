@@ -1,21 +1,24 @@
-// nome
-// dataNascimento
-// salario
+const databaseGerente = []
+const databaseFuncionario = []
+
+// nome -> string
+// dataNascimento -> string
+// salario -> number
 class Funcionario {}
 
-// departamento
+// departamento -> string
 class Gerente extends Funcionario {}
 
-// linguagem
+// linguagem -> string
 class Desenvolvedor extends Funcionario {}
 
-// const maria = new Gerente("Maria", 40, 8000, "Vendas");
-// const joao = new Desenvolvedor("João", 25, 5000, "JavaScript");
+// const maria = new Gerente("Maria", '20-05-1995', 8000, "Vendas");
+// const joao = new Desenvolvedor("João",'20-05-1995', 5000, "Desenvolvimento", "JavaScript");
 
 // console.log(maria.nome); // "Maria"
 // console.log(joao.idade); // 25
 
-// Crie um repositório para Funcionario, Gerente e Desenvolvedor
+// Crie um repositório para Gerente e Desenvolvedor
 // Deve ser possível:
 // - Criar;
 // - Editar;
