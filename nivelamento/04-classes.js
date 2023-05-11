@@ -6,6 +6,8 @@
 // Sintaxe de classe
 
 class NomeDaClasse {
+  nome = "Victor"
+
   constructor(parametros) {
     // código a ser executado quando um objeto da classe é criado
   }
@@ -29,15 +31,54 @@ class NomeDaClasse {
 // Para criar um novo objeto da classe, utilizamos a palavra-chave new,
 // seguida do nome da classe e seus parâmetros, se houverem:
 
-const obj = new NomeDaClasse(parametros);
+// const obj = new NomeDaClasse(parametros);
 
 // Podemos acessar as propriedades e métodos de um objeto da classe utilizando o operador ponto (.):
 
-obj.propriedade; // acessa o valor da propriedade
-obj.metodo(parametros); // chama o método com os parâmetros fornecidos
+// obj.propriedade; // acessa o valor da propriedade
+// obj.metodo(parametros); // chama o método com os parâmetros fornecidos
 
 // Também é possível criar classes filhas (subclasses) que herdam propriedades
 // e métodos da classe pai (superclasse):
+
+class Animal {
+  constructor(nome, especial) {
+    this.nome = nome
+    this.especial = especial
+  }
+
+  emitirSom() {
+    return ''
+  }
+}
+
+// const animalTeste = new Animal('Toto')
+// console.log(animalTeste)
+
+class Cachorro extends Animal {
+  constructor(nome, raca) {
+    super(nome, 'Cachorro')
+    this.raca = raca
+  }
+
+  emitirSom() {
+    return 'au'
+  }
+}
+
+class Gato extends Animal {
+  constructor(nome, raca) {
+    super(nome, 'Cachorro')
+    this.raca = raca
+  }
+
+  emitirSom() {
+    return 'miau'
+  }
+}
+
+// const cachorroTeste = new Cachorro('Toto2', 'Beagle')
+// console.log(cachorroTeste)
 
 class Subclasse extends NomeDaClasse {
   constructor(parametros) {
@@ -96,14 +137,51 @@ class Subclasse extends NomeDaClasse {
 
 // Exemplo
 
-const databasePacientes = []
+// Entidade/Model/Domain
+class Paciente {
+  constructor(nome, dataNascimento) {
+    this.nome = nome;
+    this.dataNascimento = dataNascimento;
+    this.createdAt = new Date();
+    this.id = 'paciente_id' + new Date().toISOString();
+  }
+}
 
 class PacientesRepository {
-  create() {}
-  findById() {}
-  findAll() {}
-  delete() {}
-  updateById() {}
+  databasePacientes = []
+
+  create(
+    nome,
+    dataNascimento
+  ) {
+    const paciente = new Paciente(nome, dataNascimento)
+    this.databasePacientes.push(paciente)
+    return paciente
+  }
+
+  findById(id) {
+    return this.databasePacientes.find((paciente) => paciente.id === id)
+  }
+
+  findAll() {
+    return this.databasePacientes
+  }
+
+  delete(id) {
+    const pacienteIndex = this.databasePacientes.findIndex((paciente) => paciente.id === id)
+    this.databasePacientes.splice(pacienteIndex, 1)
+  }
+
+  updateById(id, nome, dataNascimento) {
+    const paciente = this.findById(id)
+    Object.assign(paciente, { nome, dataNascimento, updateAt: new Date() })
+    return paciente
+  }
 }
 
 const pacienteRepository = new PacientesRepository()
+
+// const fulano = pacienteRepository.create('Fulano', '10-10-2000')
+// const ciclano = pacienteRepository.create('Ciclano', '10-10-2000')
+
+// console.log(pacienteRepository.findById(fulano.id))
