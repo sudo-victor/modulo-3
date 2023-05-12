@@ -1,5 +1,5 @@
 # Padroes de Projetos
-
+Padrões de projetos são maneiras de resolver problemas comuns que aparecem quando se está criando um projeto, como por exemplo, construir uma casa. Imagine que um arquiteto já construiu várias casas e percebeu que sempre enfrenta os mesmos problemas, como onde colocar as portas e janelas para que a casa fique bem ventilada ou como fazer para que a casa seja mais eficiente energeticamente.
 
 ## Factory
 O padrão Factory é uma técnica de programação que ajuda a criar objetos de forma
