@@ -13,4 +13,4 @@ assert.strictEqual(2, 2)
 const pessoa = { nome: '2' }
 const fulano = pessoa
 const ciclano = pessoa
-assert.deepStrictEqual(fulano, ciclano)
+assert.deepEqual(fulano, ciclano)
