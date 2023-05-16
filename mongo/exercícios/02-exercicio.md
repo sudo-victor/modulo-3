@@ -5,20 +5,20 @@ Em um contexto de desenvolvimento de software, uma entidade no backend geralment
 se refere a um objeto ou conceito que representa algo do mundo real. Essas entidades
 são usadas para modelar e armazenar dados no sistema.
 
-### Livro
-- Titulo (string)
+### Produto
+- Nome (string)
 - Descricao (string)
-- Ano de Lancamento (string)
-- Autor (string)
+- Preco (number)
+- Estoque (string)
 - Categoria (string)
 
-## Funcionalidades
-- Deve ser possível cadastrar um livro, passando as informacoes: titulo, descricao,
-ano de lancamento, autor e categoria;
-- Deve ser possível buscar um livro pelo titulo
-- Deve ser possível buscar todos os livros de um determinado autor
-- Deve ser possível atualizar as informacoes de um livro passando o seu id
-- Deve ser possível deletar cada livro pelo id
+## Requisitos
+- Deve ser possível cadastrar um produto, passando as informacoes: nome, descricao,
+preco, estoque e categoria
+- Deve ser possível buscar um produto pelo nome
+- Deve ser possível buscar todos os produtos de uma determinada categoria
+- Deve ser possível atualizar as informacoes de um produto passando o seu id
+- Deve ser possível deletar cada produto pelo id
 
 ## Hints
 1 - Para iniciar um projeto node
