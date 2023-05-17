@@ -1,4 +1,4 @@
-# Sistema de biblioteca
+# Sistema de mercado
 
 ## Entidade
 Em um contexto de desenvolvimento de software, uma entidade no backend geralmente

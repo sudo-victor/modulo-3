@@ -1,7 +1,6 @@
 # Some queries
 
 ## And
-
 Se mais de um nome de campo for especificado, então é uma consulta "AND".
 ```
 {
@@ -11,14 +10,12 @@ Se mais de um nome de campo for especificado, então é uma consulta "AND".
 ```
 
 ## Or
-
 O operador de consulta aceita um array que inclui um conjunto de objetos de consulta, e pelo menos um desses objetos deve corresponder a um documento antes que ele seja recuperado.
-
 ```
 {
   $or:[
-    {author:"Daniel"},
-    {author:"Jessica"}
+    { author: "Ivan" },
+    { author: "Jessica" }
   ]
 }
 ```
