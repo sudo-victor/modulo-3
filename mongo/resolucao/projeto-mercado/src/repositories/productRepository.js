@@ -14,11 +14,13 @@ class ProductRepository {
   }
 
   async create(data) {
+    // InsertOne -> Cria um objeto no banco de dados
     const product = await this.database.insertOne(data);
     return product;
   }
 
   async getByName(name) {
+    // FindOne -> Busca um objeto no banco de dados
     const product = await this.database.findOne({
       name
     })
@@ -27,6 +29,7 @@ class ProductRepository {
   }
 
   async getAllByCategory(category) {
+    // Find -> Busca uma lista de objeto no banco de dados
     const products = await this.database.find({
       category
     }).toArray()
@@ -35,16 +38,16 @@ class ProductRepository {
   }
 
   async update(id, data) {
+    // UpdateOne -> Atualiza um único objeto no banco de dados
     await this.database.updateOne({
       _id: new ObjectId(id)
     }, {
-      $set: {
-        ...data
-      }
+      $set: data
     })
   }
 
   async destroy(id) {
+    // deleteOne -> Deleta um único objeto no banco de dados
     await this.database.deleteOne({ _id: new ObjectId(id) })
   }
 }

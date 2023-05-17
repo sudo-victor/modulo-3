@@ -10,5 +10,5 @@ const collection = client.db(databaseName).collection(collectionName);
 const productRepository = new ProductRepository(collection)
 
 ;(async () => {
-  await productRepository.destroy('6465490077360e671ddec711')
+  console.log(await productRepository.getByName('asdaasd'))
 })()

@@ -7,7 +7,7 @@ são usadas para modelar e armazenar dados no sistema.
 
 ### Time
 - Nome (string)
-- Pontos (string)
+- Pontos (number)
 - Categoria (string)
 - Qtd. integrantes (number)
 
@@ -15,6 +15,7 @@ são usadas para modelar e armazenar dados no sistema.
 - Deve ser possível cadastrar um time, passando as informacoes: nome, pontos, categoria
 e qtd. integrante.
 - Deve ser possível buscar um time pelo nome(LIKE QUERY)
+- Deve ser possível buscar os times com pontuacao acima de 10(Greater than QUERY)
 - Deve ser possível buscar todos os times de uma determinada categoria
 - Deve ser possível atualizar os pontos do time passando o seu id
 - Deve ser possível deletar cada time pelo id

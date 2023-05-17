@@ -15,17 +15,17 @@ O operador de consulta aceita um array que inclui um conjunto de objetos de cons
 {
   $or:[
     { author: "Ivan" },
-    { author: "Jessica" }
+    { price: "Jessica" }
   ]
 }
 ```
 
-## GTE (Greatest than or equal)
+## GTE (Greater than or equal) && GT (Greater than)
 ```
-{"fieldname":{$gte:100}}
+{ "fieldname": {$gte:100} }
 ```
 
-## LTE (Less than or equal)
+## LTE (Less than or equal) && LT (Less than)
 ```
 {"fieldname":{$lte:100}}
 ```
