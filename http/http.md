@@ -2,13 +2,18 @@
 
 HTTP é a sigla para "Hypertext Transfer Protocol" (Protocolo de Transferência de Hipertexto, em português). É um protocolo de comunicação utilizado para a transferência de dados na World Wide Web (WWW). O HTTP é a base para a comunicação de dados entre um cliente (como um navegador da web) e um servidor web.
 
+Requisicao -> Resposta
 
-## Métodos
+## Métodos HTTP
 
 Os métodos HTTP são os verbos usados para indicar a ação a ser realizada em um recurso
 específico em uma requisição HTTP. Cada método tem um propósito diferente e define o
 tipo de operação que será executada no servidor. Aqui estão alguns dos principais métodos HTTP:
 
+- GET -> Consumir informacoes/dados
+- POST -> Cadastrar dados
+- PUT -> Atualizacao dos dados
+- DELETE -> Deletar né
 
 ## Estrutura de uma Requisiao e Resposta
 
@@ -29,7 +34,7 @@ Accept: application/json
 ```
 
 Body: Alguns tipos de requisições podem conter um corpo, como quando você envia
-dados através de um formulário HTML ou quando faz uma requisição POST. O corpo
+dados através de um formulário HTML **ou** quando faz uma requisição POST. O corpo
 contém os dados enviados pelo cliente.
 
 ## Como configurar um servidor http no node?
