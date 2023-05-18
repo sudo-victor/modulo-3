@@ -12,11 +12,20 @@ tipo de operação que será executada no servidor. Aqui estão alguns dos princ
 
 ## Estrutura de uma Requisiao e Resposta
 
+Host: efere-se a um servidor ou computador que está hospedando um recurso ou um
+site na Internet. O host é identificado por um nome de domínio (por exemplo, www.example.com)
+ou um endereço IP (por exemplo, 192.168.0.1).
+
+Rota: Rotas HTTP são como caminhos que levam a lugares na internet. Cada caminho
+tem um nome, como um endereço, e quando você digita esse nome em um navegador,
+ele pede ao computador daquele lugar para mostrar uma página. Por exemplo, se
+você digitar "www.exemplo.com/pagina", o computador chamado "www.exemplo.com"
+vai mostrar a página chamada "pagina".
 
 Header: Os cabeçalhos HTTP fornecem informações adicionais sobre a requisição, como informações de autenticação, tipo de conteúdo aceitável, idioma preferido e outros. Os cabeçalhos são representados por pares chave-valor separados por dois pontos. Por exemplo:
 ```bash
-Host: www.exemplo.com
-User-Agent:0 (/5Windows. NT 10 Mozilla.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36
+Content-Type: application/json; charset=utf
+Accept: application/json
 ```
 
 Body: Alguns tipos de requisições podem conter um corpo, como quando você envia
