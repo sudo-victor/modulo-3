@@ -48,7 +48,7 @@ app.get('/minha_rota', (req, res) => {
 - Params (Parâmetros): Os parâmetros referem-se a informações incluídas em uma solicitação HTTP para fornecer dados específicos sobre a operação desejada. Eles são frequentemente usados em solicitações GET e são anexados à URL. Por exemplo, em uma URL como "http://exemplo.com/recurso/123", o parâmetro "123" é usado para especificar o recurso desejado.
 
 ```js
-app.get('/minha_rota', (req, res) => {
+app.get('/orders/:meu_param', (req, res) => {
   const params = req.params
   // ou
   const { params } = req

@@ -1,0 +1,17 @@
+{
+  "name": "entrega",
+  "version": "1.0.0",
+  "description": "## Pedido nome do produto -> string endereco do comprador -> string nome do comprador -> string data do pedido -> string pedido entregue -> boolean",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^5.5.0"
+  }
+}

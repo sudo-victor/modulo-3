@@ -13,4 +13,4 @@ canceledAt -> Date
 - Deve ser possivel buscar apenas as transacoes do tipo "withdraw"
 - Deve ser possivel buscar apenas as transacoes do tipo "deposit"
 - Deve ser possivel buscar uma transacao pelo id
-- Deve ser possivel cancelar uma transacao buscando pelo id e atualizando o canceledAt
+- Deve ser possivel cancelar uma transacao buscando pelo id e atualizando o canceledAt(PUT)
