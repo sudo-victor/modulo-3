@@ -17,6 +17,11 @@ tipo de operação que será executada no servidor. Aqui estão alguns dos princ
 
 ## Estrutura de uma Requisiao e Resposta
 
+localhost:3000 -> app nestjs
+localhost:3333 -> app express
+localhost:5000 -> app java
+localhost:3306 -> banco de dados mysql
+
 Host: efere-se a um servidor ou computador que está hospedando um recurso ou um
 site na Internet. O host é identificado por um nome de domínio (por exemplo, www.example.com)
 ou um endereço IP (por exemplo, 192.168.0.1).
