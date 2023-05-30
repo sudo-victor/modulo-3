@@ -115,12 +115,13 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 ```
 
-## Limite máximo de número
+## Limite minimo de número
 
 ```javascript
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
+  name: {}
   age: {
     type: Number,
     min: 18,

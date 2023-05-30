@@ -1,7 +1,7 @@
 import { config } from "dotenv";
 import { initializeDatabase } from "./database/config.js";
 config();
-initializeDatabase()
+await initializeDatabase()
 
 const repository = makeProduct()
 
