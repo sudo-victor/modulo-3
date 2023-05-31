@@ -9,7 +9,7 @@ User
 
 Post
 - content -> string[Required, minLength(3)]
-- likes -> number[default(0)]
+- likes -> number[default(0), min(0)]
 
 ## Functionalidades
 - Deve ser possível criar um usuário, passando: fullname, nickname e email
