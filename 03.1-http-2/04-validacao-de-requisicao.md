@@ -7,17 +7,14 @@ Para validar precisamos declarar como vai ser o objeto, e para isso criamos um s
 ```javascript
 const yup = require('yup');
 
-
 const schema = yup.object().shape({
   name: yup.string().min(2).required(),
-  email: yup.string().email('E-mail inválido').required('Campo obrigatório),
+  email: yup.string().email('asdlalkd').required('Campo obrigatório'),
   score: yup.number().required()
 })
-
 ```
 
-Note que é possível colocar uma mensagem de erro personalizada, se caso deseje.
-Para ver as outras tipagems: https://www.npmjs.com/package/yup
+Note que é possível colocar uma mensagem de erro personalizada, se caso deseje. Para ver as outras tipagems: https://www.npmjs.com/package/yup
 
 ## Validacao
 
