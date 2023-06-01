@@ -9,7 +9,7 @@ Tarefa
 
 User
 - name -> string[Required, minLength(3)]
-- email -> number[default(0), min(0)]
+- email -> string[Unique, Required]
 
 ## Functionalidades
 - Deve ser possível criar um usuário, passando: name e email
