@@ -22,4 +22,4 @@ O fluxo básico de execução assíncrona é o seguinte:
 Essa interação entre a call stack, o event loop e a callback queue permite que o JavaScript e o Node.js executem operações assíncronas de forma eficiente, evitando bloqueios e permitindo que o código continue a ser executado enquanto as tarefas assíncronas são processadas em segundo plano.
 
 
-Veja na prática: http://latentflip.com/loupe/?code=!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D
+Veja na prática: https://latentflip.com/loupe
