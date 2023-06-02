@@ -25,6 +25,9 @@ const RaffleSchema = new mongoose.Schema({
   timestamps: true
 })
 
+createdAt
+updatedAt
+
 const Raffle = mongoose.model('Raffle', RaffleSchema)
 
 export { Raffle }
