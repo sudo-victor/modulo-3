@@ -7,7 +7,7 @@ const express = require('express');
 const app = express();
 
 // Middleware
-app.use((req, res, next) => {
+app.use((err, req, res, next) => {
   // Executa alguma lógica antes de prosseguir para a próxima função de middleware ou rota
 
   // Por exemplo, você pode fazer alguma validação ou adicionar informações à requisição
@@ -49,3 +49,6 @@ Dentro do middleware, você pode executar qualquer lógica necessária, como aut
 É importante chamar `next()` para garantir que a execução prossiga para a próxima função de middleware ou rota. Se você não chamar `next()`, a requisição ficará presa no middleware e a resposta não será enviada ao cliente.
 
 Lembre-se de que a ordem dos middlewares é importante, pois eles são executados na ordem em que são definidos.
+
+
+Interceptor / Guard / Middleware
