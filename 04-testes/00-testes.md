@@ -13,6 +13,8 @@ Os testes funcionais verificam o comportamento do sistema como um todo, testando
 Testes de Aceitação:
 Os testes de aceitação, também conhecidos como testes de aceitação do usuário (UAT), são realizados para validar se o sistema atende aos critérios de aceitação estabelecidos pelos usuários ou partes interessadas. Esses testes são normalmente conduzidos por usuários finais ou representantes dos usuários.
 
+Stackholders = Partes interessadas
+
 Testes de Regressão:
 Os testes de regressão são executados para garantir que as alterações recentes no código não tenham introduzido regressões ou problemas em áreas previamente testadas e funcionando corretamente. Eles são particularmente úteis durante o desenvolvimento contínuo e as iterações do software.
 
