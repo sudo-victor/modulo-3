@@ -28,3 +28,4 @@ NPM (Node Package Manager): O Node.js possui um gerenciador de pacotes chamado n
 Construção de Servidores Web: Com o Node.js, é possível criar servidores web completos usando JavaScript. O Node.js fornece um conjunto de módulos internos, como o módulo HTTP, que facilitam a criação de servidores web personalizados. Além disso, existem frameworks populares, como o Express.js, que simplificam ainda mais o processo de construção de aplicativos web robustos e escaláveis.
 
 ## Entendendo  call stack/event loop/callback queue 
+
