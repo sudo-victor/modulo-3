@@ -1,6 +1,7 @@
 # Entendendo call stack/event loop/callback queue
 A call stack, o event loop e a callback queue são componentes essenciais do modelo de execução assíncrona do JavaScript e do Node.js. Vamos entender cada um deles:
 
+
 ## Call Stack (Pilha de Chamadas)
 
 A call stack é uma estrutura de dados que mantém o rastreamento das chamadas de função em execução no programa. Ela opera no princípio LIFO (Last In, First Out), o que significa que a última função chamada é a primeira a ser concluída. Sempre que uma função é chamada, ela é adicionada ao topo da pilha, e quando uma função é concluída, ela é removida da pilha.
