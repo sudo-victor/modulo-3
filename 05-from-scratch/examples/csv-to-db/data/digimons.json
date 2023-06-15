@@ -1,0 +1,52 @@
+[
+  {
+    "nome": "Agumon",
+    "tipo": "Vacina",
+    "nível": "Novato"
+  },
+  {
+    "nome": "Gabumon",
+    "tipo": "Vírus",
+    "nível": "Novato"
+  },
+  {
+    "nome": "Patamon",
+    "tipo": "Vacina",
+    "nível": "Novato"
+  },
+  {
+    "nome": "Gatomon",
+    "tipo": "Vacina",
+    "nível": "Novato"
+  },
+  {
+    "nome": "Veemon",
+    "tipo": "Vacina",
+    "nível": "Novato"
+  },
+  {
+    "nome": "Tentomon",
+    "tipo": "Vírus",
+    "nível": "Novato"
+  },
+  {
+    "nome": "Palmon",
+    "tipo": "Vacina",
+    "nível": "Novato"
+  },
+  {
+    "nome": "Gomamon",
+    "tipo": "Vacina",
+    "nível": "Novato"
+  },
+  {
+    "nome": "Wormmon",
+    "tipo": "Vacina",
+    "nível": "Novato"
+  },
+  {
+    "nome": "Hawkmon",
+    "tipo": "Vacina",
+    "nível": "Novato"
+  }
+]
