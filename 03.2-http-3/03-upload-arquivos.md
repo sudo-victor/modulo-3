@@ -54,7 +54,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
 ## Configurar imagens estaticas
 
 ```javascript
-app.use(express.static(path.join(__dirname, 'uploads')))
+app.use(express.static(path.join(__dirname, "..", 'uploads')))
 ```
 
 Para disponibilizar imagens usando o Express e o middleware `express.static`, você pode seguir os seguintes passos:
