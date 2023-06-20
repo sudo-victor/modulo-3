@@ -13,3 +13,4 @@ User {
 
 - Deve ser possível criar um usuário passando: nome, email, password e um arquivo
 - Deve ser possível listar os usuários
+- Deve ser possivel se autenticar com email e senha
