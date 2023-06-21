@@ -11,7 +11,7 @@ class UploadSingle {
         callback(null, file.fieldname + "-" + new Date().getTime() + "." + extension )  
       },
     })
-    
+
     const upload = multer({ storage: options })
 
     return upload.single(name)

@@ -1,3 +1,4 @@
+import { CreateUserDTO } from "../dtos/createUserDto"
 import { User } from "../entities/User"
 
 class UserRepository {
@@ -7,7 +8,11 @@ class UserRepository {
     return this.model.findOne({ email })
   }
 
-  async create(user: any) {
+  async findById(id: string) {
+    return this.model.findById(id)
+  }
+
+  async create(user: CreateUserDTO) {
     return this.model.create(user)
   }
 }

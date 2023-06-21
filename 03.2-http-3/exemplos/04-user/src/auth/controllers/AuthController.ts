@@ -1,5 +1,5 @@
-import { Request, Response } from "express"
-import * as yup from "yup"
+import { Request, Response } from "express";
+import { makeLoginSchema } from "../schemas/loginSchema";
 
 class AuthController {
   constructor(private service: any) {}
@@ -7,19 +7,16 @@ class AuthController {
   async login(req: Request, res: Response) {
     const { body } = req
 
-    const bodySchema = yup.object().shape({
-      email: yup.string().email().required(),
-      password: yup.string().required(),
-    })
+    const bodySchema = makeLoginSchema()
 
     try {
       await bodySchema.validate(body)
-    } catch(err: any) {
+    } catch (err: any) {
       return res.status(400).json({ error: err.errors })
     }
 
     const result = await this.service.login(body)
-    if ('error' in result) {
+    if('error' in result) {
       return res.status(result.status).json(result)
     }
 
