@@ -4,9 +4,13 @@ import { makeUser } from "../factories/makeUser"
 import { CreateUserDTO } from "../dtos/createUserDto"
 import { GetMeDTO } from "../dtos/getMeDto"
 import { IUser, UserMapper } from "../mappers/UserMapper"
+import { PhotoRepository } from "../../photos/repositories/PhotoRepository"
 
 class UserService {
-  constructor(private repository: UserRepository) {}
+  constructor(
+    private repository: UserRepository,
+    private photoRepository: PhotoRepository
+  ) {}
 
   async create(body: CreateUserDTO) {
     const userAlreadyExists = await this.repository.findByEmail(body.email)
@@ -15,9 +19,11 @@ class UserService {
       return makeError('User already exists', 400)
     }
 
-    const userToPersist = makeUser(body)
+    const photo = await this.photoRepository.create(body.photo)
 
-    return this.repository.create(userToPersist)
+    const userToPersist = makeUser({...body, photo: photo._id })
+
+    return this.repository.create({ ...userToPersist, photo })
   }
 
   async me(body: GetMeDTO) {

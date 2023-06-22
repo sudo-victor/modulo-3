@@ -9,7 +9,7 @@ class UserRepository {
   }
 
   async findById(id: string) {
-    return this.model.findById(id)
+    return this.model.findById(id).populate('photo')
   }
 
   async create(user: CreateUserDTO) {

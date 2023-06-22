@@ -19,7 +19,8 @@ class UserController {
       return res.status(400).json({ error: err.errors })
     }
 
-    const result = await this.service.create({...body, photo: file?.filename })
+    const photo = { filename: file?.filename, mimetype: file?.mimetype}
+    const result = await this.service.create({...body, photo })
     if ('error' in result) {
       return res.status(result.status).json(result)
     }

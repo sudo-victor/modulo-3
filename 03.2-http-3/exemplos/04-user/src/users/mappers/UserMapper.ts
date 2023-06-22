@@ -14,7 +14,7 @@ class UserMapper {
       "id": user._id,
       "name": user.name,
       "email": user.email,
-      "photo": "http://localhost:3434/images/" + user.photo,
+      "photo": user.photo,
       "createdAt": user.createdAt,
       "updatedAt": user.updatedAt,
     }
