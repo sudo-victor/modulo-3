@@ -1,4 +1,4 @@
-import { Crypt } from "../../utils/crypt";
+import { Crypt } from "../../../utils/crypt";
 
 interface MakeUserProps {
   name: string;

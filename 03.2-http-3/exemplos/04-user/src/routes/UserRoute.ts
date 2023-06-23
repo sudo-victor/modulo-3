@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { UserModule } from "../users/UserModule";
+import { UserModule } from "../app/users/UserModule";
 import { UploadSingle } from "../common/middlewares/uploadMiddleware";
 import { ensureAuthenticate } from "../common/middlewares/ensureAuthenticate";
 

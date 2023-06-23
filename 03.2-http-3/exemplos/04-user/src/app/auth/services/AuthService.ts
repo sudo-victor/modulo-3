@@ -1,8 +1,8 @@
 import JWT from "jsonwebtoken";
 import { UserRepository } from "../../users/repositories/UserRepository";
-import { Crypt } from "../../utils/crypt";
-import { makeError } from "../../utils/error-handle";
-import { CreateLoginDTO } from "../dtos/createLoginDTO";
+import { Crypt } from "../../../utils/crypt";
+import { makeError } from "../../../utils/error-handle";
+import { CreateLoginDTO } from "../dtos/createLoginDto";
 
 class AuthService {
   constructor(private userRepository: UserRepository) {}

@@ -1,5 +1,5 @@
 import { UserRepository } from "../repositories/UserRepository"
-import { makeError } from "../../utils/error-handle"
+import { makeError } from "../../../utils/error-handle"
 import { makeUser } from "../factories/makeUser"
 import { CreateUserDTO } from "../dtos/createUserDto"
 import { GetMeDTO } from "../dtos/getMeDto"
