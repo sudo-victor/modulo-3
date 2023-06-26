@@ -41,7 +41,7 @@ class UserController {
 
     const result = await this.service.me(params as any as GetMeDTO) as any
     if('error' in result) {
-      res.status(result.status).json(result)
+      return res.status(result.status).json(result)
     }
 
     return res.status(200).json(result)

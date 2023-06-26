@@ -3,6 +3,7 @@ import { UserRepository } from "../../users/repositories/UserRepository";
 import { Crypt } from "../../../utils/crypt";
 import { makeError } from "../../../utils/error-handle";
 import { CreateLoginDTO } from "../dtos/createLoginDto";
+import { UserMapper } from "../../users/mappers/UserMapper";
 
 class AuthService {
   constructor(private userRepository: UserRepository) {}
@@ -26,11 +27,11 @@ class AuthService {
     // secret key
     const secret = process.env.JWT_SECRET_KEY as string
     // options
-    const options = { expiresIn: '15m' }
+    const options = { expiresIn: '15m', }
 
     const token = JWT.sign(payload, secret, options)
 
-    return { token, user: userAlreadyExists }
+    return { token, user: UserMapper.toClient(userAlreadyExists as any) }
   }
 }
 

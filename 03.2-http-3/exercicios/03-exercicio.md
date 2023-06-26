@@ -15,3 +15,5 @@ User {
 - Deve ser possível listar os usuários
 - Deve ser possivel se autenticar com email e senha
 - Crie rotas privadas no sistema
+- Crie uma entidade photo para relacionar com user
+- Crie uma entidade "Post" para se relacionar com um user

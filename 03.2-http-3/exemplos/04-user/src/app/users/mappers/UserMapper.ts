@@ -15,8 +15,6 @@ class UserMapper {
       "name": user.name,
       "email": user.email,
       "photo": user.photo,
-      "createdAt": user.createdAt,
-      "updatedAt": user.updatedAt,
     }
   }
 }

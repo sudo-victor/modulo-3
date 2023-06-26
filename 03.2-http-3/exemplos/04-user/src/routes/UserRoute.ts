@@ -8,7 +8,6 @@ const controller = UserModule.build().controller
 const uploadSingle = UploadSingle.build("photo")
 
 userRouter.post('/', uploadSingle, controller.create.bind(controller))
-userRouter.get('/me/:id', ensureAuthenticate,  controller.me.bind(controller))
+userRouter.get('/me/:id', ensureAuthenticate, controller.me.bind(controller))
 
 export { userRouter }
-
