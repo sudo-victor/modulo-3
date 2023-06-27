@@ -13,7 +13,11 @@ class BoardRepository {
       $push: {
         tasks: [taskId]
       }
-    }, { new: true })
+    }, { new: true }).populate('tasks')
+  }
+
+  getById(id: string) {
+    return this.model.findById(id).populate('tasks')
   }
 
 }

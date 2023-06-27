@@ -8,7 +8,14 @@ class BoardService {
     try {
       return this.repository.create(board);
     } catch(error) {
-      console.log('error creating board', error)
+      return { error: true, message: "Internal server error", status: 500 }
+    }
+  }
+
+  async getById(id: string) {
+    try {
+      return this.repository.getById(id);
+    } catch(error) {
       return { error: true, message: "Internal server error", status: 500 }
     }
   }

@@ -1,5 +1,6 @@
 import { BoardRepository } from "../../boards/repositories/BoardRepository";
 import { CreateTaskDTO } from "../dtos/createTaskDto";
+import { UpdateStatusTaskDTO } from "../dtos/updateStatusTaskDto";
 import { TaskRepository } from "../repositories/TaskRepository";
 
 class TaskService {
@@ -15,6 +16,22 @@ class TaskService {
       return this.boardRepository.pushTask(task.boardId as string, taskCreated.id)
     } catch(error) {
       console.log('error creating board', error)
+      return { error: true, message: "Internal server error", status: 500 }
+    }
+  }
+
+  async updateStatus(task: UpdateStatusTaskDTO) {
+    try {
+      return this.repository.updateStatus(task)
+    } catch(error) {
+      return { error: true, message: "Internal server error", status: 500 }
+    }
+  }
+
+  async delete(id: string) {
+    try {
+      return this.repository.delete(id)
+    } catch(error) {
       return { error: true, message: "Internal server error", status: 500 }
     }
   }
