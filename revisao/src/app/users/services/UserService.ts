@@ -10,6 +10,12 @@ class UserService {
   ) {}
 
   async create(params: CreateUserServiceDTO) {
+      // verificar se usuario ja existe
+      const userAlreadyExist = await this.repository.findByEmail(params.email);
+      if(userAlreadyExist) {
+        return { error: true, message: 'User already exists', status: 400 }
+      }
+
       // criar foto
       const photo = await this.photoRepository.create(params.photo)
 
@@ -20,7 +26,9 @@ class UserService {
         photo: photo.id
       }
 
-      return this.repository.create(payload)
+      const result = await this.repository.create(payload)
+
+      return { ...(result as any)._doc, photo }
     }
 }
 
