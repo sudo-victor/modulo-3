@@ -3,4 +3,7 @@
 [x] - Atualizar status tarefa
 [x] - Excluir tarefa
 [x] - Criar usuário
-[ ] - Autenticar com usuário
+[x] - Autenticar com usuário
+[x] - Autorizacão
+[] - Associar uma tarefa a varios users
+[] - Testes

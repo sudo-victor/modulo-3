@@ -4,6 +4,8 @@ import { makeCreateTaskSchema } from "../schemas/createTaskSchema";
 import { makeUpdateTaskStatusSchema } from "../schemas/updateTaskStatusSchema";
 import { makeDeleteTaskSchema } from "../schemas/deleteTaskSchema";
 import { ValidationError } from "yup"
+import { makeAssociateATaksSchema } from "../schemas/associateATaskSchema";
+import { AssociateAUserDTO } from "../dtos/associateAUserDto";
 
 class TaskController {
   constructor(
@@ -56,6 +58,23 @@ class TaskController {
     }
 
     const result = await this.service.delete(params.id) as any
+    if('error' in result) {
+      return res.status(result.status).json(result)
+    }
+
+    return res.status(200).json(result)
+  }
+
+  async associateAUser(req: Request, res: Response) {
+    const { params } = req
+
+    try {
+      await makeAssociateATaksSchema().validate(params)
+    } catch (err: any) {
+      return res.status(400).json({ errors: err.errors })
+    }
+
+    const result = await this.service.associateAUser(params as any as AssociateAUserDTO) as any
     if('error' in result) {
       return res.status(result.status).json(result)
     }

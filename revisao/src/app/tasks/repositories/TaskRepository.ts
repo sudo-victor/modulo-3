@@ -18,6 +18,12 @@ class TaskRepository {
   async delete(id: string) {
     return this.model.findByIdAndDelete(id);
   }
+
+  async pushUser(taskId: string, userId: string) {
+    return this.model.findByIdAndUpdate(taskId, {
+          $push: { users: [userId] }
+        }, { new: true }).populate('users')
+  }
 }
 
 export { TaskRepository }

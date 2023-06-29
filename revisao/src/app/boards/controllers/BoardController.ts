@@ -24,7 +24,7 @@ class BoardController {
 
   async getById(req: Request, res: Response) {
     const { params } = req
-    
+
     try {
       await makeGetBoardByIdSchema().validate(params)
     } catch(err: any) {

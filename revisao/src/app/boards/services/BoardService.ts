@@ -14,7 +14,9 @@ class BoardService {
 
   async getById(id: string) {
     try {
-      return this.repository.getById(id);
+      const result = await this.repository.getById(id);
+
+      return result ?? { error: true, message: "Board not found", status: 404 } 
     } catch(error) {
       return { error: true, message: "Internal server error", status: 500 }
     }

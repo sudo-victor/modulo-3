@@ -1,4 +1,5 @@
 import { BoardRepository } from "../../boards/repositories/BoardRepository";
+import { AssociateAUserDTO } from "../dtos/associateAUserDto";
 import { CreateTaskDTO } from "../dtos/createTaskDto";
 import { UpdateStatusTaskDTO } from "../dtos/updateStatusTaskDto";
 import { TaskRepository } from "../repositories/TaskRepository";
@@ -31,6 +32,15 @@ class TaskService {
   async delete(id: string) {
     try {
       return this.repository.delete(id)
+    } catch(error) {
+      return { error: true, message: "Internal server error", status: 500 }
+    }
+  }
+
+  async associateAUser(params: AssociateAUserDTO) {
+    try {
+      const result =  await this.repository.pushUser(params.task_id, params.user_id)
+      return result ?? { error: true, message: "Task not found", status: 404 }
     } catch(error) {
       return { error: true, message: "Internal server error", status: 500 }
     }

@@ -50,7 +50,7 @@ Agora, você pode executar seus testes usando o Jest. Adicione um script ao seu 
 
 ```json
 "scripts": {
-  "test": "jest"
+  "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
 }
 ```
 
