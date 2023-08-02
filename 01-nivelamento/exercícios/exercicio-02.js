@@ -59,3 +59,4 @@ updateStudentRepository(2, {
   document: '123.123.123-00',
   status: 'matriculado'
 })
+

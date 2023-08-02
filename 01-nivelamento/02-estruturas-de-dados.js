@@ -62,6 +62,15 @@ const subtotal = produtos.reduce((valorAnterior, valorAtual) => {
   return valorAnterior + valorAtual.preco
 }, 0)
 
+const products = [
+  { name: 'Camisa', price: 100, amount: 5 },
+  { name: 'Short', price: 50, amount: 2 }
+]
+
+const NFCe = products.reduce((valorAnterior, valorAtual) => {
+  return valorAnterior + `Produto: ${valorAtual.name} ${valorAtual.amount * valorAtual.price}\n`
+}, '')
+
 // PROTOTYPE CHAIN
 
 // 2 - Objects: são coleções de pares chave-valor, onde cada chave é uma string e o

@@ -35,7 +35,7 @@ function myFunction(param1, param2) {
 const myExpressionFunction = function(param1, param2) {
   // Corpo da função
   // Pode incluir declarações de variáveis, operações lógicas, loops, etc.
-};
+}; 
 
 // Arrow function: é uma forma ainda mais simplificada de declarar uma função.
 // As arrow functions foram introduzidas no ES6 e são uma sintaxe mais clara
@@ -72,9 +72,10 @@ function criarPessoa(nome, idade) {
     id: 'pessoa_id' + new Date(),
     nome,
     idade,
-    imprimir: function() {
-      console.log(`Meu nome é ${this.nome} e tenho ${this.idade} anos`)
-    }
+    imprimir: function () {
+      console.log(`${this.id}Meu nome é ${this.nome} e tenho ${this.idade} anos`)
+    },
+    createdAt: new Date()
   }
 
   return pessoa
