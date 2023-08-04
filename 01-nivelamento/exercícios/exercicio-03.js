@@ -1,33 +1,51 @@
 // Crie 3 entidades: Funcionário, Gerente e Desenvolvedor
 
-// O Funcionário terá as seguintes informações
-// - code, String;
-// - nome, String;
-// - dataNascimento, String;
-// - salario, Number;
-// - createdAt, Date;
+let idCount = 0
 
-// O Gerente terá as seguintes informações:
-// - code, String;
-// - nome, String;
-// - dataNascimento, String;
-// - salario, Number;
-// - departamento, String;
-// - createdAt, Date;
+class Funcionario {
+  constructor(data) {
+    this.nome = data.nome;
+    this.dataNascimento = data.dataNascimento;
+    this.salario = data.salario;
+    this.createdAt = new Date();
+    this.code = ++idCount
+  }
+}
 
-// O Desenvolvedor terá as seguintes informações:
-// - code, String;
-// - nome, String;
-// - dataNascimento, String;
-// - salario, Number;
-// - tecnologia, String;
-// - createdAt, Date;
+class Gerente extends Funcionario {
+  constructor(data) {
+    super(data)
+    this.departamento = data.departamento
+  }
+}
 
-const maria = new Gerente("Maria", '20-05-1995', 8000, "Vendas");
-const joao = new Desenvolvedor("João",'20-05-1995', 5000, "JavaScript");
+class Desenvolvedor extends Funcionario {
+  constructor(data) {
+    super(data)
+    this.tecnologia = data.tecnologia
+  }
+}
 
-console.log(maria.nome); // "Maria"
-console.log(joao.idade); // 25
+// const func1 = new Funcionario({ 
+//   nome: "Func1",
+//   dataNascimento: "12/12/1212",
+//   salario: "12323",
+//  })
+
+//  const gerente1 = new Gerente({ 
+//    nome: "Gerente1",
+//    dataNascimento: "12/12/1212",
+//    salario: "12323",
+//    departamento: "TI",
+//  })
+
+// const dev1 = new Desenvolvedor({ 
+//   nome: "Desenvolvedor",
+//   dataNascimento: "12/12/1212",
+//   salario: "12323",
+//   tecnologia: "Javascript",
+// })
+
 
 // Crie um repositório para cada entidade: FuncionarioRepository, GerenteRepository e DesenvolvedorRepository
 // Deve ser possível:
@@ -35,3 +53,45 @@ console.log(joao.idade); // 25
 // - Editar;
 // - Buscar por código;
 // - Deletar.
+
+class FuncionarioRepository {
+  constructor(database) {
+    this.database = database
+  }
+
+  create(data) {
+    const funcionario = new Funcionario(data)
+    this.database.push(funcionario)
+    return funcionario
+  }
+
+  update(code, data) {
+    const funcionario = this.database.find((func) => func.code === code)
+
+    if (!funcionario) {
+      return "Funcionario nao encontrado"
+    }
+
+    Object.assign(funcionario, data)
+    return funcionario
+  }
+
+  findAll() {
+    return this.database
+  }
+
+  findByCode(code) {
+    return this.database.find((func) => func.code === code)
+  }
+}
+
+const mongdb = []
+const mysql = []
+
+const funcionarioRepository = new FuncionarioRepository(mysql)
+
+funcionarioRepository.create({ 
+  nome: "Func1",
+  dataNascimento: "12/12/1212",
+  salario: "12323",
+})
