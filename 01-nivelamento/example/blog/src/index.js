@@ -1,3 +1,4 @@
+import { User } from "./entities/User.js";
 import { MakeUser } from "./factories/MakeUser.js"
 
 import { MongoClient } from "mongodb"
@@ -6,12 +7,14 @@ const client = new MongoClient('mongodb+srv://turma4:arnia4turma@arnia.mjald23.m
 
 const livrosCollection = client.db("Arnia").collection("livros")
 
+const user = new User({ 
+   nickname: 'victor2',
+   email: 'victor2@email.com',
+   password: '123123',
+})
+
 ;(async () => {
-  await livrosCollection.insertOne({
-    name: "A volta dos que nao foram 2",
-    author: "Lucas Carvalho",
-    versao: 2
-  })
+  await livrosCollection.insertOne(user)
   const result = await livrosCollection.find().toArray()
   console.log(result)
 })()
