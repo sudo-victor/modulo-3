@@ -15,7 +15,7 @@ O operador de consulta aceita um array que inclui um conjunto de objetos de cons
 {
   $or:[
     { author: "Ivan" },
-    { price: "Jessica" }
+    { price: 100 }
   ]
 }
 ```
