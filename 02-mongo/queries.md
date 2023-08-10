@@ -29,3 +29,8 @@ O operador de consulta aceita um array que inclui um conjunto de objetos de cons
 ```
 {"fieldname":{$lte:100}}
 ```
+
+## LIKE
+```
+{ $regex: '^João', $options: 'i' } 
+```
