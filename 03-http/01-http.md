@@ -1,84 +1,39 @@
 # O que é HTTP
 
-HTTP é a sigla para "Hypertext Transfer Protocol" (Protocolo de Transferência de Hipertexto, em português). É um protocolo de comunicação utilizado para a transferência de dados na World Wide Web (WWW). O HTTP é a base para a comunicação de dados entre um cliente (como um navegador da web) e um servidor web.
+HTTP (Protocolo de Transferência de Hipertexto) é um protocolo padrão usado para a comunicação entre clientes (como navegadores da web) e servidores na World Wide Web (WWW). Ele define como as mensagens são formatadas e transmitidas e as ações que servidores e navegadores devem tomar em resposta a comandos específicos.
 
-Requisicao -> Resposta
+## Estrutura de uma Requisição e Resposta
 
-## Métodos HTTP
+### Host
+O host refere-se ao servidor ou computador que hospeda um recurso ou site na Internet. É identificado por um nome de domínio (por exemplo, `www.example.com`) ou um endereço IP (por exemplo, `192.168.0.1`), e é responsável por processar as requisições recebidas e enviar as respostas adequadas.
 
-Os métodos HTTP são os verbos usados para indicar a ação a ser realizada em um recurso
-específico em uma requisição HTTP. Cada método tem um propósito diferente e define o
-tipo de operação que será executada no servidor. Aqui estão alguns dos principais métodos HTTP:
+### Rota
+As rotas HTTP definem os caminhos disponíveis em um servidor web. Cada rota corresponde a um recurso específico, e quando você acessa uma rota através de um navegador, ele solicita ao servidor correspondente para fornecer o conteúdo desejado.
 
-- GET -> Consumir informacoes/dados
-- POST -> Cadastrar dados
-- PUT -> Atualizacao dos dados
-- DELETE -> Deletar né
+### Header
+Os cabeçalhos HTTP incluem informações adicionais sobre a requisição ou resposta, como tipo de conteúdo, autenticação, idioma, entre outros. Os cabeçalhos são representados por pares chave-valor. Exemplo:
 
-## Estrutura de uma Requisiao e Resposta
-
-localhost:3000 -> app nestjs
-localhost:3333 -> app express
-localhost:5000 -> app java
-localhost:3306 -> banco de dados mysql
-
-Host: efere-se a um servidor ou computador que está hospedando um recurso ou um
-site na Internet. O host é identificado por um nome de domínio (por exemplo, www.example.com)
-ou um endereço IP (por exemplo, 192.168.0.1).
-
-Rota: Rotas HTTP são como caminhos que levam a lugares na internet. Cada caminho
-tem um nome, como um endereço, e quando você digita esse nome em um navegador,
-ele pede ao computador daquele lugar para mostrar uma página. Por exemplo, se
-você digitar "www.exemplo.com/pagina", o computador chamado "www.exemplo.com"
-vai mostrar a página chamada "pagina".
-
-Header: Os cabeçalhos HTTP fornecem informações adicionais sobre a requisição, como informações de autenticação, tipo de conteúdo aceitável, idioma preferido e outros. Os cabeçalhos são representados por pares chave-valor separados por dois pontos. Por exemplo:
 ```bash
-Content-Type: application/json; charset=utf
+Content-Type: application/json; charset=utf-8
 Accept: application/json
 ```
 
-Body: Alguns tipos de requisições podem conter um corpo, como quando você envia
-dados através de um formulário HTML **ou** quando faz uma requisição POST. O corpo
-contém os dados enviados pelo cliente.
+### Body
+O corpo da requisição contém dados enviados pelo cliente, geralmente usados em métodos como POST ou PUT. Pode incluir informações como detalhes de um formulário HTML ou dados JSON.
 
-## Como configurar um servidor http no node?
+## Métodos HTTP
 
-```js
-const http = require('http');
-const url = require('url');
+Os métodos HTTP indicam a ação desejada a ser executada no recurso especificado. São eles:
 
-// Cria o servidor
-const server = http.createServer((req, res) => {
-  // Obtém a URL e o método da requisição
-  const parsedUrl = url.parse(req.url, true);
-  const path = parsedUrl.pathname;
-  const method = req.method;
+- **GET**: Recupera dados.
+- **POST**: Cria um novo recurso.
+- **PUT**: Atualiza um recurso existente.
+- **PATCH**: Modifica parcialmente um recurso.
+- **DELETE**: Remove um recurso.
 
-  // Define as rotas
-  if (path === '/'){
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Página inicial');
-  } else if (path === '/contato') {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Página de contato');
-  } else {
-    res.writeHead(404, {'Content-Type': 'text/plain'});
-    res.end('Página não encontrada');
-  }
-});
+## Como configurar um servidor HTTP no Node com Express?
 
-// Inicia o servidor na porta 3000
-server.listen(3000, () => {
-  console.log('Servidor iniciado na porta 3000');
-});
-
-```
-
-## Como configurar um servidor http no node com express?
-O Express.js é um framework web rápido, flexível e minimalista para Node.js. 
-Ele fornece uma camada de abstração sobre o módulo HTTP nativo do Node.js, 
-facilitando a criação de aplicativos web e APIs de forma eficiente.
+Express.js é um framework web para Node.js que simplifica a construção de aplicativos web e APIs. Ele fornece uma abstração sobre o módulo HTTP nativo do Node.js, tornando mais fácil definir rotas, manipular requisições e respostas, e integrar middleware.
 
 ```js
 const express = require('express');
@@ -97,5 +52,4 @@ app.get('/contato', (req, res) => {
 app.listen(3000, () => {
   console.log('Servidor iniciado na porta 3000');
 });
-
 ```
