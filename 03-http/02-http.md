@@ -1,5 +1,5 @@
 # HTTP Parte 2
-
+REQ -> RES
 ## Status HTTP
 
 Os códigos de status HTTP informam ao cliente sobre o resultado de uma determinada solicitação. Eles são parte essencial da comunicação HTTP e ajudam a identificar se uma operação foi bem-sucedida ou se ocorreu algum erro.
