@@ -11,7 +11,7 @@ O host refere-se ao servidor ou computador que hospeda um recurso ou site na Int
 As rotas HTTP definem os caminhos disponíveis em um servidor web. Cada rota corresponde a um recurso específico, e quando você acessa uma rota através de um navegador, ele solicita ao servidor correspondente para fornecer o conteúdo desejado.
 
 ### Header
-Os cabeçalhos HTTP incluem informações adicionais sobre a requisição ou resposta, como tipo de conteúdo, autenticação, idioma, entre outros. Os cabeçalhos são representados por pares chave-valor. Exemplo:
+Os cabeçalhos HTTP incluem informações adicionais sobre a requisição ou resposta, como tipo de conteúdo, autenticação, idioma, entre outros. Os cabeçalhos são **representados** por pares chave-valor. Exemplo:
 
 ```bash
 Content-Type: application/json; charset=utf-8
