@@ -60,3 +60,5 @@ A consulta contém informações adicionais na URL para filtrar ou pesquisar rec
 ```javascript
 const query = req.query;
 ```
+
+http://localhost:3333/products?name=camisa&price=100

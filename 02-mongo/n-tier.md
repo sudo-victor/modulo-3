@@ -36,8 +36,7 @@ Geralmente, envolve um banco de dados ou qualquer outro mecanismo de persistênc
 de dados. Essa camada é responsável por garantir a integridade e a segurança dos
 dados, bem como por fornecer acesso eficiente a eles.
 
-A arquitetura n-tier oferece uma série de benefícios, como modularidade, escalabilidade
-e manutenção mais fácil. Ao dividir um sistema em camadas, cada uma com uma responsabilidade
+A arquitetura n-tier oferece uma série de benefícios, como modularidade, escalabilidade e manutenção mais fácil. Ao dividir um sistema em camadas, cada uma com uma responsabilidade
 específica, é possível obter uma estrutura mais organizada e flexível, permitindo
 que diferentes partes do sistema sejam modificadas ou atualizadas independentemente
 das outras. Isso facilita o desenvolvimento, a manutenção e a evolução do software ao longo do tempo.
