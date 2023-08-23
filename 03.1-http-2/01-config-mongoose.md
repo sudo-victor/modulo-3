@@ -22,6 +22,13 @@ function closeDatabase() {
 
 ## Configuracao da Entidade/Schema/Model
 
+Schema
+
+
+
+Model
+
+
 ```js
 const mongoose = require('mongoose');
 
