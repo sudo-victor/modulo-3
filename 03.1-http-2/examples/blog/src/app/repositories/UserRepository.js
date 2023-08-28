@@ -11,6 +11,10 @@ class UserRepository {
     return this.model.findById(id)
   }
 
+  async findAll() {
+    return this.model.find()
+  }
+
   async pushPost(userId, postId) {
     return this.model.findByIdAndUpdate(userId, {
       $push: {

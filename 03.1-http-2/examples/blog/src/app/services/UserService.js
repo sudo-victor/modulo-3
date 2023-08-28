@@ -7,6 +7,11 @@ class UserService {
     const result = await this.repository.create(data)
     return result
   }
+
+  async index() {
+    const result = await this.repository.findAll()
+    return result
+  }
 }
 
 export { UserService }

@@ -10,6 +10,11 @@ class UserController {
 
     res.status(201).json(result)
   }
+
+  async index(req, res) {
+    const result = await this.service.index()
+    res.status(200).json(result)
+  }
 }
 
 export { UserController }

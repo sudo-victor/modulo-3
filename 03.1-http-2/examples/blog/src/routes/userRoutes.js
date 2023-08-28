@@ -10,5 +10,6 @@ const service = new UserService(repository)
 const controller = new UserController(service)
 
 router.post("/users", controller.create.bind(controller))
+router.get("/users", controller.index.bind(controller))
 
 export { router }
