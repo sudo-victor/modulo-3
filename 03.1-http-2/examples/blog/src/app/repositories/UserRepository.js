@@ -12,7 +12,11 @@ class UserRepository {
   }
 
   async findAll() {
-    return this.model.find()
+    return this.model.find().populate("posts")
+  }
+
+  async findByEmail(email) {
+    return this.model.findOne({ email }).populate("posts")
   }
 
   async pushPost(userId, postId) {
