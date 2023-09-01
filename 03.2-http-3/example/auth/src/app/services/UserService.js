@@ -1,8 +1,9 @@
 import { Crypt } from "../../utils/Crypt.js"
 
 class UserService {
-  constructor(repository) {
+  constructor(repository, photoRepository) {
     this.repository = repository
+    this.photoRepository = photoRepository
   }
 
   async create(data) {
@@ -15,11 +16,13 @@ class UserService {
       }
     }
 
+    const photo = await this.photoRepository.create(data.photo)
+
     const user = {
       ...data,
-      password: Crypt.encrypt(data.password)
+      password: Crypt.encrypt(data.password),
+      photo: photo._id
     }
-
     return this.repository.create(user)
   }
 

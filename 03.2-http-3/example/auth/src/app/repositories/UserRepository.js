@@ -4,7 +4,7 @@ class UserRepository {
   }
 
   async findAll() {
-    return this.model.find()
+    return this.model.find().populate("photo")
   }
 
 

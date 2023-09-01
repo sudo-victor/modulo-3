@@ -8,14 +8,22 @@ class UserController {
   }
 
   async create(req, res) {
-    const { body } = req
+    const { body, file } = req
 
     const bodyIsValid = UserSchemaValidation.isValid(body)
     if(bodyIsValid.error) {
       return res.status(400).json(CommonError.build(bodyIsValid.messages, 400))
     }
 
-    const result = await this.service.create(body)
+    const data = {
+      ...body,
+      photo: {
+        filename: file.filename,
+        mimetype: file.mimetype,
+      }
+    }
+
+    const result = await this.service.create(data)
     if ('error' in result) {
       return res.status(result.status).json(result)
     }
