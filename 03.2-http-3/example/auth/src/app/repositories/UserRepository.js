@@ -3,6 +3,11 @@ class UserRepository {
     this.model = model
   }
 
+  async findAll() {
+    return this.model.find()
+  }
+
+
   async findByEmail(email) {
     return this.model.findOne({ email })
   }

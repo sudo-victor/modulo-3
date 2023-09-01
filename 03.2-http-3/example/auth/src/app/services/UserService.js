@@ -23,6 +23,10 @@ class UserService {
     return this.repository.create(user)
   }
 
+  async findAll() {
+    return this.repository.findAll()
+  }
+
 }
 
 export { UserService }
