@@ -1,12 +1,10 @@
-// TDD
-// Test Driven Development
+export default function createUser(data, database) {
+  const userAlreadyExists = database.find(item => item.email === data.email)
+  if (userAlreadyExists) {
+    return "Error"
+  } 
 
-function sum(x, y) {
-  if (x < 0) {
-    return -1
-  }
-
-  return x + y + 1
+  database.push({ id: Date.now(), ...data })
+  return database
 }
 
-module.exports = sum
