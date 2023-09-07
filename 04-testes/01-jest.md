@@ -11,7 +11,7 @@ Passo 2: Instale o Jest
 Instale o pacote do Jest como uma dependência de desenvolvimento no seu projeto executando o seguinte comando no terminal:
 
 ```
-npm install --save-dev jest
+npm install --save-dev jest @jest/globals
 ```
 
 Passo 3: Rode um comando no terminal, que irá criar um arquivo chamado `jest.config.js`. o comando:
@@ -65,36 +65,3 @@ O Jest encontrará e executará automaticamente todos os arquivos de teste encon
 Essas são as etapas básicas para configurar o Jest em um projeto Node.js. Você também pode personalizar ainda mais a configuração do Jest para atender às suas necessidades específicas, como adicionar plugins, configurar cobertura de código, etc. Consulte a documentação oficial do Jest para obter mais informações sobre as opções de configuração disponíveis: [https://jestjs.io/docs/configuration](https://jestjs.io/docs/configuration)
 
 
-
-
-
-
-
-// Função para buscar um usuário por e-mail no banco de dados
-export function findUserByEmail(email, database) {
-  return database.find(item => item.email === email);
-}
-
-// Função para atualizar um usuário no banco de dados
-export function updateUser(userId, newData, database) {
-  const existingUserIndex = database.findIndex(item => item.id === userId);
-
-  if (existingUserIndex === -1) {
-    return "User not found";
-  }
-
-  database[existingUserIndex] = { ...database[existingUserIndex], ...newData };
-  return "User updated successfully";
-}
-
-// Função para excluir um usuário do banco de dados
-export function deleteUser(userId, database) {
-  const existingUserIndex = database.findIndex(item => item.id === userId);
-
-  if (existingUserIndex === -1) {
-    return "User not found";
-  }
-
-  database.splice(existingUserIndex, 1);
-  return "User deleted successfully";
-}

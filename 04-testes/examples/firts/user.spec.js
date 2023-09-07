@@ -1,4 +1,5 @@
-import createUser from "../index.js"
+import { jest } from "@jest/globals"
+import createUser from "./index.js"
 
 describe("User", () => {
   it("deve ser capaz de criar um usuário dado as infos corretas", () => {
