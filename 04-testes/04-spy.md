@@ -1,8 +1,6 @@
 
 # Spy:
-Um spy é um objeto que registra informações sobre chamadas de função durante os testes. Ele permite verificar se uma função foi chamada, com quais argumentos e quantas vezes. Os spies são úteis para testar o comportamento interno de um objeto ou verificar se determinadas funções foram ac
-
-ionadas.
+Um spy é um objeto que registra informações sobre chamadas de função durante os testes. Ele permite verificar se uma função foi chamada, com quais argumentos e quantas vezes. Os spies são úteis para testar o comportamento interno de um objeto ou verificar se determinadas funções foram acionadas.
 
 Exemplo de uso de um spy com Jest em Node.js:
 
