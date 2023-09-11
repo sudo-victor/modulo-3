@@ -11,25 +11,12 @@ Para configurar o TypeScript e o Babel em uma API Node.js, você pode seguir os 
    Execute o seguinte comando no terminal para instalar as dependências necessárias:
 
    ```bash
-   npm install express typescript @babel/core @babel/preset-env @babel/preset-typescript @babel/preset-env @babel/cli nodemon --save-dev
+   npm install typescript @babel/core @babel/preset-env @babel/preset-typescript @babel/cli nodemon ts-node --save-dev
    ```
 
-3. Configuração do TypeScript:
-   Crie um arquivo de configuração do TypeScript chamado `tsconfig.json` na raiz do seu projeto com o seguinte conteúdo:
+3. Configuracao do TypeScript
+   Rode o comando ```npx tsc --init```
 
-   ```json
-   {
-     "compilerOptions": {
-       "target": "es2018",
-       "module": "commonjs",
-       "outDir": "dist",
-       "strict": true,
-       "esModuleInterop": true
-     },
-     "include": ["src"],
-     "exclude": ["node_modules"]
-   }
-   ```
 
 4. Configuração do Babel:
    Crie um arquivo de configuração do Babel chamado `.babelrc` na raiz do seu projeto com o seguinte conteúdo:
