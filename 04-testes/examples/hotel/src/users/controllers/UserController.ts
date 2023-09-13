@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
-import yup from "yup";
+import * as yup from "yup";
+import { UserService } from "../services/UserService";
 
 class UserController {
-  constructor(private service: any) {}
+  constructor(private service: UserService) {}
 
   async create(req: Request, res: Response) {
     const { body } = req

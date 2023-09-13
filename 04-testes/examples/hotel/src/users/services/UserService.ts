@@ -1,7 +1,8 @@
 import bcrypt from "bcrypt"
+import { UserRepository } from "../repositories/UserRepository"
 
 class UserService {
-  constructor(private repository: any) {}
+  constructor(private repository: UserRepository) {}
 
   async create(data: any) {
     const userAlreadyExists = await this.repository.findByEmail(data.email)

@@ -25,7 +25,8 @@ Usuario {
 
 ## Funcionalidades
 
-1. **Cadastro de Usuário:**
+
+1. **Cadastro de Usuário:** FEITO
    - Um novo usuário se cadastra fornecendo um nome, um endereço de e-mail e uma senha.
    - Os dados do usuário são validados para garantir que o e-mail seja único.
    - Um registro do usuário é criado no banco de dados com as informações fornecidas.
