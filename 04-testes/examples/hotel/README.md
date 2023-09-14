@@ -31,7 +31,7 @@ Usuario {
    - Os dados do usuário são validados para garantir que o e-mail seja único.
    - Um registro do usuário é criado no banco de dados com as informações fornecidas.
 
-2. **Login de Usuário:**
+2. **Login de Usuário:** FEITO
    - Um usuário registrado insere seu endereço de e-mail e senha.
    - O sistema verifica se as credenciais estão corretas e autentica o usuário.
 
