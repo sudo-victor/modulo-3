@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { HotelModule } from "../hotels/HotelModule";
+import { HotelModule } from "../app/hotels/HotelModule";
 
 const hotelRoutes = Router()
 const { controller } = HotelModule.getInstances()

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { UserModule } from "../users/UserModule";
+import { UserModule } from "../app/users/UserModule";
 
 const userRoutes = Router()
 const { controller } = UserModule.getInstances()

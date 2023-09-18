@@ -4,7 +4,7 @@ import JWT from "jsonwebtoken"
 
 import { AuthService } from "./AuthService";
 import { UserRepository } from "../../users/repositories/UserRepository";
-import { makeError } from "../../utils/makeError";
+import { makeError } from "../../../utils/makeError";
 
 const userRepositoryMock = { findByEmail: vi.fn() } as any as UserRepository
 const sut = new AuthService(userRepositoryMock)

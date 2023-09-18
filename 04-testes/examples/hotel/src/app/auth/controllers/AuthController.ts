@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import * as yup from "yup"
-import { makeError } from "../../utils/makeError";
+import { makeError } from "../../../utils/makeError";
 
 class AuthController {
   constructor(private service: any) {}

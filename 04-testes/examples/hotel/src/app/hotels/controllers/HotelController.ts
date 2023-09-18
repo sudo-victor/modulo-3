@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import * as yup from "yup";
-import { makeError } from "../../utils/makeError";
-import { STATUS_CODE } from "../../utils/statusCode";
+import { makeError } from "../../../utils/makeError";
+import { STATUS_CODE } from "../../../utils/statusCode";
 import { HotelService } from "../services/HotelService";
 
 class HotelController {

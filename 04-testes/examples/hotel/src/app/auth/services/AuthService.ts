@@ -2,10 +2,10 @@ import JWT from "jsonwebtoken"
 import bcrypt from "bcrypt";
 
 import { UserRepository } from "../../users/repositories/UserRepository";
-import { makeError } from "../../utils/makeError";
+import { makeError } from "../../../utils/makeError";
 import { IUser } from "../../users/entities/User";
 import { AuthDto } from "../dtos/authDto";
-import { AuthMapper, IToApi } from "../../utils/mappers/AuthMapper";
+import { AuthMapper, IToApi } from "../../../utils/mappers/AuthMapper";
 
 
 class AuthService {

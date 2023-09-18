@@ -1,4 +1,4 @@
-import { IUser } from "../../users/entities/User"
+import { IUser } from "../../app/users/entities/User"
 
 type IToApi =  IUser & { _id: string }
 

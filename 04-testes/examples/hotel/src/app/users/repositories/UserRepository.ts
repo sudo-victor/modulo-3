@@ -1,6 +1,6 @@
 import { Model, MongooseError } from "mongoose";
 import { IUser } from "../entities/User";
-import { makeError } from "../../utils/makeError";
+import { makeError } from "../../../utils/makeError";
 
 class UserRepository {
   constructor(private model: Model<IUser>) {}

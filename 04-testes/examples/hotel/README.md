@@ -35,7 +35,7 @@ Usuario {
    - Um usuário registrado insere seu endereço de e-mail e senha.
    - O sistema verifica se as credenciais estão corretas e autentica o usuário.
 
-3. **Criar Hotéis:**
+3. **Criar Hotéis:** FEITO
    - Um novo hotel se cadastra fornecendo um nome, um endereço e quartosDisponiveis.
    - Não deve ser permitido criar um hotel com o mesmo nome
 
