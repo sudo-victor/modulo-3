@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt"
-import { UserRepository } from "../repositories/UserRepository"
+import { UserRepository } from "@app/users/repositories/UserRepository"
 
 class UserService {
   constructor(private repository: UserRepository) {}
@@ -20,6 +20,10 @@ class UserService {
     }
 
     return this.repository.create(userToPersist)
+  }
+
+  async findAll() {
+    return this.repository.findAll()
   }
 }
 

@@ -1,8 +1,16 @@
 interface CreateBookingDto { 
-  checkinAt: string;
-  checkoutAt: string;
+  checkinAt: string | Date;
+  checkoutAt: string | Date;
   userId: string; 
   hotelId: string; 
 }
 
-export { CreateBookingDto }
+interface CreateBookingRepoDto { 
+  checkinAt: string | Date;
+  checkoutAt: string | Date;
+  user: string; 
+  hotel: string; 
+}
+
+
+export { CreateBookingDto, CreateBookingRepoDto }

@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import * as yup from "yup";
 import { UserService } from "../services/UserService";
+import { STATUS_CODE } from "../../../utils/statusCode";
 
 class UserController {
   constructor(private service: UserService) {}
@@ -31,6 +32,16 @@ class UserController {
 
     return res.status(201).json(result)
   }
+
+  async findAll(req: Request, res: Response) {
+    const result = await this.service.findAll()
+    if ('error' in result) {
+      return res.status(result.status).json(result)
+    }
+
+    return res.status(STATUS_CODE.OK).json(result)
+  }
+
 }
 
 export { UserController }

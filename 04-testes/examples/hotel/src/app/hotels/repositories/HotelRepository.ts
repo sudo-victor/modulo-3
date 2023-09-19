@@ -6,7 +6,7 @@ class HotelRepository {
   constructor(private model: any) {}
 
   async findById(id: string): Promise<IHotel | null> {
-    return this.model.findOne({ id })
+    return this.model.findOne({ _id: id })
   }
 
   async findByName(name: string) {
@@ -14,7 +14,8 @@ class HotelRepository {
   }
 
   async create(data: CreateHotelDto) {
-    return this.model.create(data)
+    const user = await this.model.create(data)
+    return user
   }
 }
 

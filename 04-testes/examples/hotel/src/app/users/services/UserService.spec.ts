@@ -4,7 +4,13 @@ import bcrypt from "bcrypt"
 import { UserService } from "./UserService"
 
 // System under test
-const repositoryMock = { findByEmail: vi.fn(), create: vi.fn() }
+const repositoryMock = {
+  findByEmail: vi.fn(),
+  findAll: vi.fn(),
+  findById: vi.fn(),
+  pushBooking: vi.fn(),
+  create: vi.fn()
+} as any
 const sut = new UserService(repositoryMock)
 
 describe("UserService", () => {
