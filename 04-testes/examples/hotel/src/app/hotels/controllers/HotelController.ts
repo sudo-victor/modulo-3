@@ -8,7 +8,7 @@ class HotelController {
   constructor(private service: HotelService) {}
 
   async create(req: Request, res: Response) {
-    const { body } = req
+    const { body, file } = req
 
     const bodyValidation = yup.object().shape({
       name: yup.string().required(),
@@ -22,7 +22,13 @@ class HotelController {
       return res.status(STATUS_CODE.BAD_REQUEST).json(makeError(error.errors, STATUS_CODE.BAD_REQUEST))
     }
 
-    const result = await this.service.create(body)
+    const result = await this.service.create({
+      ...body,
+      file: {
+        filename: file?.filename,
+        mimetype: file?.mimetype,
+      }
+    })
     if('error' in  result) {
       return res.status(STATUS_CODE.BAD_REQUEST).json(result)
     }

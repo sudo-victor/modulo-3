@@ -1,9 +1,14 @@
+import { PhotoRepository } from "@app/photos/repositories/PhotoRepository";
 import { makeError } from "../../../utils/makeError";
 import { STATUS_CODE } from "../../../utils/statusCode";
 import { CreateHotelDto } from "../dtos/createHotelDto";
+import { HotelRepository } from "../repositories/HotelRepository";
 
 class HotelService {
-  constructor(private repository: any) {}
+  constructor(
+    private repository: HotelRepository,
+    private photoRepository: PhotoRepository,
+  ) {}
 
   async create(data: CreateHotelDto) {
     try {
@@ -12,7 +17,19 @@ class HotelService {
         return makeError("Hotel already exists", STATUS_CODE.BAD_REQUEST)
       }
 
-      const result = await this.repository.create(data)
+      // Criar a photo
+      const photo = await this.photoRepository.create(data.file)
+      console.log("PHOTO 1: ", photo)
+
+
+      const hotelPayload = {
+        ...data,
+        photo: photo.id
+      }
+
+      const result = await this.repository.create(hotelPayload)
+      console.log("RESULT 1: ", result)
+      result.photo = photo
 
       return result
     } catch(e: any) {

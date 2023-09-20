@@ -43,7 +43,7 @@ Usuario {
    - Os usuários podem pesquisar hotéis com base em critérios como destino, datas de entrada e saída.
    - O sistema retorna uma lista de hotéis que atendem aos critérios de busca.
 
-1. **Reserva de Quarto:**
+1. **Reserva de Quarto:** - FEITO
    - Os usuários podem fazer uma reserva de quarto em um hotel selecionado.
    - Eles escolhem as datas de entrada e saída.
    - O sistema verifica a disponibilidade de quartos e confirma a reserva se houver quartos disponíveis.
