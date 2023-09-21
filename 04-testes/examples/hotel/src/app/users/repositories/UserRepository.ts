@@ -1,11 +1,20 @@
-import { Model, MongooseError } from "mongoose";
+import { Model, Document } from "mongoose";
 import { IUser } from "../entities/User";
-import { makeError } from "../../../utils/makeError";
+import { MakeErrorResponse, makeError } from "../../../utils/makeError";
+
+interface FindByEmailSuccessResponse {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+  createdAt: string | Date ;
+  updatedAt: string | Date;
+}
 
 class UserRepository {
   constructor(private model: Model<IUser>) {}
 
-  async findByEmail(email: string) {
+  async findByEmail(email: string): Promise<Document<FindByEmailSuccessResponse> | MakeErrorResponse | null> {
     try {
       return this.model.findOne({ email }).select("+password")
     } catch(e: any) {

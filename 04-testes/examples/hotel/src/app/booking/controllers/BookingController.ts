@@ -38,6 +38,30 @@ class BookingController {
     return res.status(STATUS_CODE.CREATED).json(result)
   }
 
+  async cancel(req: Request, res: Response) {
+    const { params } = req
+
+    const paramsValidator = yup.object({
+      id: yup.string().required()
+    })
+
+    try {
+      await paramsValidator.validate(params)
+    } catch(e: any) {
+      return res.status(STATUS_CODE.BAD_REQUEST).json(makeError(
+        e.errors,
+        STATUS_CODE.BAD_REQUEST
+      ))
+    }
+
+    const result = await this.bookingService.cancel(params.id)
+    if ('error' in result) {
+      return res.status(result.status).json(result)
+    }
+
+    return res.status(204).send(STATUS_CODE.NO_CONTENT)
+  }
+
 }
 
 export { BookingController }

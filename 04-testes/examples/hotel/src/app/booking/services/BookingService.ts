@@ -39,13 +39,41 @@ class BookingService {
 
     const userUpdated = await this.userRepository.pushBooking(data.userId, booking.id)
 
+    const decrementedHotel = await this.hotelRepository.decrementRoomsAvailable(data.hotelId)
+
+    console.log(decrementedHotel)
+
     const result = {
       ...(booking as any as { _doc: IBooking })._doc,
       user: userUpdated,
-      hotel
+      hotel: decrementedHotel
     }
 
     return result
+  }
+
+  async cancel(id: string) {
+    // buscar reserva
+    const booking = await this.bookingRepository.findById(id)
+    if (!booking || 'error' in booking) {
+      return makeError("Booking not found", STATUS_CODE.NOT_FOUND)
+    }
+
+    // validar a data
+    const formattedCheckinAt = new Date(booking.checkinAt)
+    if (formattedCheckinAt < new Date()) {
+      return makeError("It's not possible cancel this booking", STATUS_CODE.BAD_REQUEST)
+    }
+
+    // incrementar a quantidade de quarto disponivel
+    await this.hotelRepository.incrementRoomsAvailable(
+      (booking.hotel as any).toString()
+    )
+
+    // adicionar a data de cancelamento no model Booking
+    await this.bookingRepository.cancel(id)
+
+    return { message: "success" }
   }
 
 }
