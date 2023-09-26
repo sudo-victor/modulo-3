@@ -28,9 +28,9 @@ const transaction = {
 
 if (transaction.status === "canceled") {}
 if (transaction.status === "withdraw") {}
-if (transaction.status === "deposit") {}
+if (transaction.status === "deposit") {} 
 
-const data = [
+const data = [ j
   {
     type: "session",
     content: "asdasdasd"
