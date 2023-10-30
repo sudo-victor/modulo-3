@@ -22,6 +22,7 @@
 
 // const myString = "hello";
 // const teste2 = [1, 2, 3]
+// const teste3 = [...teste2]
 // const myArrayWithFromFunction = Array.from(teste2);
 
 // // Métodos famosos
@@ -39,10 +40,6 @@
 
 // // map - percorre cada item, formata e retorna um array diferente
 // // filter - ele filtra o array e retorna um array novo
-// const numeros = [1, 2, 3, 4, 5, 6, 7, 8]
-// const apenasNumerosImpares = numeros.filter((numeroAtual) => {
-//   return (numeroAtual % 2) !== 0
-// })
 // // find - ele percorre cada item, e retorna o primeiro encontrado com uma certa lógica
 // // findIndex - ele percorre cada item, e retorna o index do primeiro encontrado com uma certa lógica
 // // reduce - 
@@ -58,9 +55,12 @@
 //   }
 // ]
 
-// const subtotal = produtos.reduce((valorAnterior, valorAtual) => {
-//   return valorAnterior + valorAtual.preco
-// }, 0)
+// const valorTotal = produtos.reduce(
+//   (acumulado, atual) => {
+//     return acumulado + atual.preco
+//   },
+//   0
+// )
 
 // const products = [
 //   { name: 'Camisa', price: 100, amount: 5 },
@@ -80,6 +80,7 @@
 // // CHAVES -> String || Symbol
 // // VALORES -> TODOS
 
+
 // // Objeto literal: é a forma mais simples e comum de criar um objeto,
 // // usando chaves {} e separando cada propriedade por vírgulas. Exemplo:
 
@@ -98,11 +99,11 @@
 // // com o operador new. As propriedades do objeto são definidas na função
 // // construtora usando a palavra-chave this. Exemplo:
 
-// function Person(name, age, city) {
-//   this.name = name;
-//   this.age = age;
-//   this.city = city;
-// }
+function Person(name, age, city) {
+  this.name = name;
+  this.age = age;
+  this.city = city;
+}
 
 // const personWithConstructor = new Person('John', 30, 'New York');
 
@@ -112,8 +113,12 @@
 // const personProto = {
 //   greet: function() {
 //     console.log('Hello');
-//   }
+//   },
+//   "Nome Completo": "asdasdasd"
 // };
+
+// personProto.greet
+// personProto["greet"]
 
 // const personWithCreateFunction = Object.create(personProto);
 // personWithCreateFunction.name = 'John';
@@ -140,18 +145,23 @@
 // // keys - retorna um array, os items sao as chaves do objeto
 // // values - retorna os valores
 
-// Map
-// Set
+// Map -> Object
+// Set -> Array
 
-const lista = [{t:""},{t:""}].map(Number)
-const listaSet = new Set()
-lista.forEach((item) => {
-  listaSet.add(item)
-})
+const lista = [1,2,3,4,5,6,6,6]
+const listaTurbinada = new Set(lista)
 
-listaSet.has(5)
+console.log(listaTurbinada)
 
-console.log(Array.from(listaSet))
+// const lista = [{t:""},{t:""}].map(Number)
+// const listaSet = new Set()
+// lista.forEach((item) => {
+//   listaSet.add(item)
+// })
+
+// listaSet.has(5)
+
+// console.log(Array.from(listaSet))
 
 // WeakMap
 // WeakSet
