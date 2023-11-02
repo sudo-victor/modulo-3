@@ -1,6 +1,31 @@
 // // Em JavaScript, existem várias estruturas de dados que você pode usar para armazenar
 // // e manipular dados. Aqui estão algumas das estruturas de dados mais comuns em JavaScript:
 
+// Objeto -> lista de props e a prop é feita de chave e valor
+// Array -> [123, 123, 123]
+
+// centavos
+// reduce -> Recebe uma lista inicial e retorna um valor reduzido -> nao
+// toFixed -> 100.toFixed(2) 100.00
+// map -> percorre o array, faz interaçao, retorna um array com a mesma quantidade 
+// for forEach
+
+const productsPrice = [100, 10000]
+
+const formatedProductPrice = productsPrice.map(
+  (centavos) => { return (centavos / 100).toFixed(2) }
+)
+
+const formatedProductPrice2 = []
+
+productsPrice.forEach((centavos) => {
+  console.log(centavos)
+})
+
+
+// console.log(formatedProductPrice)
+
+
 // // 1 - Arrays: são listas de valores que podem ser acessados e manipulados usando
 // // um índice numérico. Eles podem armazenar valores de qualquer tipo de dados, incluindo outros arrays.
 
@@ -151,7 +176,7 @@ function Person(name, age, city) {
 const lista = [1,2,3,4,5,6,6,6]
 const listaTurbinada = new Set(lista)
 
-console.log(listaTurbinada)
+// console.log(listaTurbinada)
 
 // const lista = [{t:""},{t:""}].map(Number)
 // const listaSet = new Set()

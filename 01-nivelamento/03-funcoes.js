@@ -57,6 +57,17 @@ const closureFunction = () => {
   return () => {}
 }
 
+// this
+
+// const pessoa = {
+//   nome: "Hamilton",
+//   saudacoes: function () {
+//     console.log("Ola, ", this.nome)
+//   }
+// }
+
+// pessoa.saudacoes()
+
 // Padrao Factory
 
 // O padrão Factory (ou fábrica) é um padrão de projeto de software que visa a
@@ -86,5 +97,5 @@ const pessoa1 = criarPessoa("João", 30);
 const pessoa2 = criarPessoa("Maria", 25);
 
 // Chamada do método imprimir em cada objeto
-pessoa1.imprimir(); // imprime "Meu nome é João e eu tenho 30 anos."
-pessoa2.imprimir(); // imprime "Meu nome é Maria e eu tenho 25 anos."
+// pessoa1.imprimir(); // imprime "Meu nome é João e eu tenho 30 anos."
+// pessoa2.imprimir(); // imprime "Meu nome é Maria e eu tenho 25 anos."
