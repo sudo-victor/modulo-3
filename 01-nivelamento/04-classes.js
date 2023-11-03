@@ -3,6 +3,46 @@
 // seu comportamento de forma mais fácil e intuitiva. Aqui está um exemplo de como
 // declarar uma classe no JavaScript:
 
+// Atributo -> variavel
+// Metodos -> Funcoes
+
+// add product to catalog
+
+// camelCase addProductToCatalog
+// PascalCase AddProductToCatalog
+// kebab-case
+// snake_case
+
+class Animal {
+  raca = "asdasd"
+  quantidadePatas = 0
+  cor = "caramelo"
+  familia = "Soares"
+  sexo = "M"
+  som = "AAAAAA"
+
+  constructor(raca, quantidadePatas, cor, familia, sexo) {
+    this.raca = raca
+    this.quantidadePatas = quantidadePatas
+    this.cor = cor
+    this.familia = familia
+    this.sexo = sexo
+  }
+
+  emitirSom() {
+    this.andar()
+    return this.som
+  }
+
+  andar() {
+    // asdlkajsdlka
+  }
+
+}
+
+const cachorro = new Animal("vira", 4, "caramelo", "Arruda", "F")
+console.log(cachorro.emitirSom())
+
 // Sintaxe de classe
 
 // class Pessoa {
@@ -126,43 +166,43 @@
 // // (poli = muitos, morphos = formas). Isso permite que um objeto seja tratado
 // // como se fosse de um tipo diferente, dependendo do contexto em que é utilizado.
 
-class Animal {
-  constructor(nome, tipo) {
-    this.nome = nome
-    this.tipo = tipo
-  }
+// class Animal {
+//   constructor(nome, tipo) {
+//     this.nome = nome
+//     this.tipo = tipo
+//   }
 
-  emitirSom() {
-    return '???'
-  }
-}
+//   emitirSom() {
+//     return '???'
+//   }
+// }
 
-class Cachorro extends Animal {
-  constructor(nome, raca) {
-    super(nome, "cachorro")
-    this.raca = raca
-  }
+// class Cachorro extends Animal {
+//   constructor(nome, raca) {
+//     super(nome, "cachorro")
+//     this.raca = raca
+//   }
 
-  emitirSom() {
-    return "au"
-  }
-}
+//   emitirSom() {
+//     return "au"
+//   }
+// }
 
-class Gato extends Animal {
-  constructor(nome, raca) {
-    super(nome, "cachorro")
-    this.raca = raca
-  }
+// class Gato extends Animal {
+//   constructor(nome, raca) {
+//     super(nome, "cachorro")
+//     this.raca = raca
+//   }
 
-  emitirSom() {
-    return "miau"
-  }
-}
+//   emitirSom() {
+//     return "miau"
+//   }
+// }
 
-const plutoLessyDogEsdrasPitbull = new Cachorro("Toto", "Vira-lata Caramelo")
+// const plutoLessyDogEsdrasPitbull = new Cachorro("Toto", "Vira-lata Caramelo")
 
-console.log(plutoLessyDogEsdrasPitbull)
-plutoLessyDogEsdrasPitbull.emitirSom()
+// console.log(plutoLessyDogEsdrasPitbull)
+// plutoLessyDogEsdrasPitbull.emitirSom()
 
 
 // // ========================== Padrao Repository ==========================
