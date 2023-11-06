@@ -1,5 +1,5 @@
 # Sistema Blog
-OBS: Crie o sistema utilizando as camadas Entities/Repositories/Services
+OBS: Crie o sistema utilizando as camadas Entities/Repositories
 
 ## Entidade
 

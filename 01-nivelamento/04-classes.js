@@ -3,45 +3,28 @@
 // seu comportamento de forma mais fácil e intuitiva. Aqui está um exemplo de como
 // declarar uma classe no JavaScript:
 
-// Atributo -> variavel
-// Metodos -> Funcoes
-
-// add product to catalog
-
-// camelCase addProductToCatalog
-// PascalCase AddProductToCatalog
-// kebab-case
-// snake_case
-
-class Animal {
-  raca = "asdasd"
-  quantidadePatas = 0
-  cor = "caramelo"
-  familia = "Soares"
-  sexo = "M"
-  som = "AAAAAA"
-
-  constructor(raca, quantidadePatas, cor, familia, sexo) {
-    this.raca = raca
-    this.quantidadePatas = quantidadePatas
-    this.cor = cor
-    this.familia = familia
-    this.sexo = sexo
+class Funcionario {
+  constructor(nome, salario, cargo) {
+    this.id = new Date().getTime()
+    this.nome = nome
+    this.salario = salario
+    this.cargo = cargo
+    this.createdAt = new Date()
   }
 
-  emitirSom() {
-    this.andar()
-    return this.som
+  apresentar() {
+    return `${this.nome}, ${this.cargo} recebe R$ ${this.salario}`
   }
 
-  andar() {
-    // asdlkajsdlka
+  aumentarSalario(porcetagem) {
+    this.salario += this.salario * (porcetagem / 100)
   }
-
 }
 
-const cachorro = new Animal("vira", 4, "caramelo", "Arruda", "F")
-console.log(cachorro.emitirSom())
+const manoTazio = new Funcionario("Tazio", 1000, "Vendedor de curso")
+console.log(manoTazio.apresentar())
+manoTazio.aumentarSalario(30)
+console.log(manoTazio.apresentar())
 
 // Sintaxe de classe
 
@@ -267,3 +250,22 @@ console.log(cachorro.emitirSom())
 // const ciclano = pacienteRepository.create('Ciclano', '10-10-2000')
 
 // console.log(pacienteRepository.findById(fulano.id))
+
+class FuncionarioRepository {
+  database = []
+
+  create(funcionario) {
+    this.database.push(funcionario)
+  }
+
+  findAll() {
+    return this.database
+  }
+
+  findById(id) {
+    return this.database.find((item) => item.id === id)
+  }
+}
+
+const repository = new FuncionarioRepository()
+repository.create(new Funcionario("Victor", 10, "flanelinha"))
