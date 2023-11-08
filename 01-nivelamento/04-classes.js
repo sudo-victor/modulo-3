@@ -21,10 +21,10 @@ class Funcionario {
   }
 }
 
-const manoTazio = new Funcionario("Tazio", 1000, "Vendedor de curso")
-console.log(manoTazio.apresentar())
-manoTazio.aumentarSalario(30)
-console.log(manoTazio.apresentar())
+// const manoTazio = new Funcionario("Tazio", 1000, "Vendedor de curso")
+// console.log(manoTazio.apresentar())
+// manoTazio.aumentarSalario(30)
+// console.log(manoTazio.apresentar())
 
 // Sintaxe de classe
 
@@ -148,6 +148,35 @@ console.log(manoTazio.apresentar())
 // // Polimorfismo: o polimorfismo é o conceito de que um objeto pode ter muitas formas
 // // (poli = muitos, morphos = formas). Isso permite que um objeto seja tratado
 // // como se fosse de um tipo diferente, dependendo do contexto em que é utilizado.
+
+class Animal {
+  constructor(raca, cor, nome) {
+    this.raca = raca
+    this.cor = cor
+    this.nome = nome
+  }
+
+  emetirSom() {
+    return "???"
+  }
+}
+
+class Cachorro extends Animal {
+  constructor(raca, informacaoQueSoEDoCachorro, cor, nome) {
+    super(raca, cor, nome)
+    this.informacaoQueSoEDoCachorro = informacaoQueSoEDoCachorro
+  }
+
+  emetirSom() {
+    return "aauau"
+  }
+}
+
+// console.log(new Cachorro("vira-vira", "caramelo", "joao"))
+
+// Herança -> 
+// Encapsulamento ->
+// Polimorfismo ->
 
 // class Animal {
 //   constructor(nome, tipo) {
