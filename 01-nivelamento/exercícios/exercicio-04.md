@@ -11,6 +11,7 @@ Livro {
 }
 
 ## Casos de uso
+
 - Deve ser possível cadastrar um livro, passando as informacoes: titulo, descricao,
 ano de lancamento, autor e categoria;
 - Deve ser possível buscar um livro pelo titulo
