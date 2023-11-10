@@ -34,6 +34,6 @@ Vamos adicionar uma nova entidade ao nosso sistema de gerenciamento de livraria:
 ## Início do Projeto Node e Importação/Exportação de Módulos
 1. Para iniciar um projeto Node:
    ```bash
-   npm init
+   npm init -y
    ```
   
