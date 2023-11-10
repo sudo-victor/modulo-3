@@ -20,6 +20,7 @@ que pode variar dependendo do sistema e dos requisitos específicos. No entanto,
 
 ## Camadas
 
+
 1. Camada de apresentação (ou interface do usuário): É a camada visível para os
 usuários finais e permite a interação com o sistema. Geralmente, inclui interfaces
 gráficas de usuário (GUIs), páginas da web, aplicativos móveis ou qualquer outra
@@ -35,6 +36,7 @@ entre a camada de apresentação e a camada de dados.
 Geralmente, envolve um banco de dados ou qualquer outro mecanismo de persistência
 de dados. Essa camada é responsável por garantir a integridade e a segurança dos
 dados, bem como por fornecer acesso eficiente a eles.
+
 
 A arquitetura n-tier oferece uma série de benefícios, como modularidade, escalabilidade e manutenção mais fácil. Ao dividir um sistema em camadas, cada uma com uma responsabilidade
 específica, é possível obter uma estrutura mais organizada e flexível, permitindo
