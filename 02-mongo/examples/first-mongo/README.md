@@ -1,0 +1,3 @@
+mongodb+srv://joaozin_minecraft:KoR657RFuhBCZBdZ>@arniaturma5.hlqlsqm.mongodb.net/
+
+
