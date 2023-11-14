@@ -1,3 +1,5 @@
+// mongodb+srv://joaozin_minecraft:KoR657RFuhBCZBdZ>@arniaturma5.hlqlsqm.mongodb.net/
+
 # Configurando o mongo DB
 
 1. Primeiro, você precisa ter o pacote `mongodb` instalado no seu projeto. Você pode instalá-lo usando o npm:
