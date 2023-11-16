@@ -10,7 +10,12 @@ class MongoBookRepository {
   }
 
   findAll() {
-    return this.collection.find().toArray()
+    return this.collection.find({
+      $or: [
+        { author: 'lauwa' },
+        { releasedAt: 2010 },
+      ]
+    }).toArray()
   }
 
   findAllByAuthor(author) {

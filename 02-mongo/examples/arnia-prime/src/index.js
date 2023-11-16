@@ -8,19 +8,26 @@ const repository = new BookRepository()
 const service = new BookService(mongoRepository)
 
 // IIFE
-;(async () => {
-  await service.create("Clean Code", "blablabla", 2000, "Wafiter", "tech")
-  // console.log(await service.findAll())
-  // const allUncleBobBooks = await service.findAllByAuthor("Wafiter")
-  await service.update("6553ff2cbd5ce4b9e96c1396", {
-    title: "Clean Code",
-    description: "mudou!!!",
-    releasedAt: 2000,
-    author: "Paola",
-    category: "tech"
-  })
+// ;(async () => {
+//   await service.create("Clean Code", "blablabla", 2000, "Wafiter", "tech")
+//   // console.log(await service.findAll())
+//   // const allUncleBobBooks = await service.findAllByAuthor("Wafiter")
+//   await service.update("6553ff2cbd5ce4b9e96c1396", {
+//     title: "Clean Code",
+//     description: "mudou!!!",
+//     releasedAt: 2000,
+//     author: "Paola",
+//     category: "tech"
+//   })
 
-  const paolaBooks = await service.findAllByAuthor("Paola")
-  console.log(paolaBooks)
+//   const paolaBooks = await service.findAllByAuthor("Paola")
+//   console.log(paolaBooks)
+//   client.close()
+// })()
+
+;(async () => {
+  // await service.create("Refactoring", "blablabla", 2010, "Matheus", "tech")
+  const books = await service.findAll()
+  console.log(books)
   client.close()
 })()
