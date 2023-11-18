@@ -11,10 +11,7 @@ class MongoBookRepository {
 
   findAll() {
     return this.collection.find({
-      $or: [
-        { author: 'lauwa' },
-        { releasedAt: 2010 },
-      ]
+      author: 'lauwa'
     }).toArray()
   }
 

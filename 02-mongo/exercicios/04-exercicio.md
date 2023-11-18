@@ -11,13 +11,7 @@ Em um contexto de desenvolvimento de software, uma entidade no backend geralment
 - status ("rented" ou "available") por padrao "available"
 
 ## Requisitos
-- Deve ser possível cadastrar um carro, passando as informações: modelo, ano, marca e preço.
-- Deve ser possível buscar um carro pelo modelo (LIKE QUERY).
-- Deve ser possível buscar os carros com ano maior ou igual ao recebido pelo parametro (Greater than or equal QUERY).
-- Deve ser possível buscar os carros com preço menor ou igual a um determinado valor (Less than or equal QUERY).
-- Deve ser possível atualizar o preço do carro passando o seu id.
-- Deve ser possível deletar um carro pelo id.
-
+- Deve ser possível cadastrar um carro, passando as informações: modelo, ano, marca e  
 ## Hints
 1 - Para iniciar um projeto node
 ```bash

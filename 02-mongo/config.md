@@ -34,3 +34,14 @@ Neste exemplo, estamos conectando ao MongoDB localmente (URL: `mongodb://localho
 O código conecta ao banco de dados, obtém uma referência para uma coleção chamada `usuarios`, insere um documento nessa coleção e, em seguida, fecha a conexão com o MongoDB.
 
 Espero que este exemplo possa ajudá-lo a iniciar a integração com o MongoDB usando o Node.js!
+
+
+
+// AND = e
+// OR = ou
+
+quero uma camisa 
+{
+  cor: preta || branca
+  tamanho: GG
+}
