@@ -7,6 +7,53 @@ HTTP (Protocolo de Transferência de Hipertexto) é um protocolo padrão usado p
 ### Host
 O host refere-se ao servidor ou computador que hospeda um recurso ou site na Internet. É identificado por um nome de domínio (por exemplo, `www.example.com`) ou um endereço IP (por exemplo, `192.168.0.1`), e é responsável por processar as requisições recebidas e enviar as respostas adequadas.
 
+<!-- Host -> Servidor
+Servidor tem um endereco -> IP -->
+
+
+Servidor -> Sistema
+
+Campo Grande é o endereco do servidor
+Endereco:Porta/Rota -> url
+
+Request
+
+# Header
+- Qual é a url do client
+- Qual formato de dado o client ta enviando
+- Qual formato o cliente quer receber a resposta
+# Body
+- Informacao que o cliente envia para o servidor
+- Formatos: JSON, Text
+# Params
+- http://url/products/2
+# Query
+- http://url/products?page=1&maxItems=10
+
+DELETE http://url/products/
+
+# Methods
+GET -> Buscar recursos
+POST -> Salvar recursos
+PUT -> Atualizar Todas as infos do Recurso
+PATCH -> Atualizar Recursos
+DELETE -> Remove o recurso
+
+Response
+
+# Header
+- O formato de retorno
+- Qual o caminho da request
+# Body
+- JSON, HTML, XML, TEXT
+# Status
+1xx -> Informativo
+2xx -> Sucesso
+3xx -> Redirecionamento
+4xx -> Erro do lado do client
+5xx -> Erro do lado do servidor
+
+
 ### Rota
 As rotas HTTP definem os caminhos disponíveis em um servidor web. Cada rota corresponde a um recurso específico, e quando você acessa uma rota através de um navegador, ele solicita ao servidor correspondente para fornecer o conteúdo desejado.
 
