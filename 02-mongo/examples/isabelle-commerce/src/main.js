@@ -7,6 +7,12 @@ const { client, collection } = initializeDB()
 const repository = new ProductRepository(collection)
 const services = new ProductService(repository)
 
+// const app = express()
+// app.post("/products", async (req, res) => {
+//   await services.create(req.body)
+//   res.status(201).json()
+// })
+
 ;(async () => {
   // Create
   // await services.create({
