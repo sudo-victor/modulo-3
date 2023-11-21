@@ -8,6 +8,19 @@ Os códigos de status HTTP informam ao cliente sobre o resultado de uma determin
 
 Os códigos de status HTTP são compostos por três dígitos e divididos em cinco classes:
 
+200 - ok
+201 - created
+204 - ok, no content
+
+400 - bad request
+401/403 - Permissoes e autenticacao
+404 - Not found
+
+500 - Internal Server Error
+503 - Bad Gateway
+
+
+
 - **1xx (Informativos)**: Informam que a solicitação foi recebida e está sendo processada.
 - **2xx (Sucesso)**: Confirmam que a solicitação foi processada com sucesso.
 - **3xx (Redirecionamento)**: Indicam que ações adicionais são necessárias para concluir a solicitação.
