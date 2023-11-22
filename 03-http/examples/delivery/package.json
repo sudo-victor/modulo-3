@@ -1,0 +1,20 @@
+{
+  "name": "delivery",
+  "version": "1.0.0",
+  "description": "## Pedido - Nome do produto -> string - Endereço do comprador -> string - Nome do comprador -> string - Data do pedido -> string - Pedido entregue -> boolean",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
