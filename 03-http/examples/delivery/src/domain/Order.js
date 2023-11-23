@@ -13,6 +13,11 @@ export class Order extends BaseDomain {
     this.recipientName = props.recipient.name
     this.isDelivered = false
   }
+
+  deliverAnOrder() {
+    this.isDelivered = true
+    this.touch()
+  }
 }
 
 // new Order({

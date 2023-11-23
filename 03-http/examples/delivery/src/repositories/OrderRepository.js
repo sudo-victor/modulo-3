@@ -16,16 +16,18 @@ export default class OrderRepository {
   }
 
   findById(id) {
-    return this.collection.findOne({ _id: new ObjectId(id) })
-  }
-
-  updateStatusToDelivered(id) {
-    this.collection.updateOne({
+    return this.collection.findOne({
       _id: new ObjectId(id)
-    }, {
-      $set: {
-        isDelivered: true
-      }
     })
   }
+
+  updateOrderStatusToDelivered(id) {
+    return this.collection.updateOne(
+      { _id: new ObjectId(id) },
+      {
+        $set: { isDelivered: true }
+      }
+    )
+  }
+
 }

@@ -1,6 +1,14 @@
 import { Order } from "../domain/Order.js"
 
+function mapperOrderToDomain(orderFromDatabase) {
+  return new Order({
+    product: { name: orderFromDatabase.productName},
+    recipient: { name: recipientName, address: recipientAddress }
+  })
+}
+
 export default class OrderService {
+  // Injecao de Dependencia
   constructor(repository) {
     this.repository = repository
   }
@@ -21,14 +29,32 @@ export default class OrderService {
     return this.repository.findAllPending()
   }
 
-  async changeStatusToDelivered(id) {
+  async deliverAnOrder(id) {
     const order = await this.repository.findById(id)
     if (!order) {
-      return "Order not found"
+      return { error: true, message: "Order not found" }
     }
-
-    await this.repository.updateStatusToDelivered(id)
-
-    return true
+    if (order.isDelivered) {
+      return { error: true, message: "Order already delivered" }
+    }
+    await this.repository.updateOrderStatusToDelivered(id)
+    return { ...order, isDelivered: true }
   }
+
+  // Exemplo usando domínio
+// async deliverAnOrder(id) {
+//   const orderFromDB = await this.repository.findById(id)
+//   if (!orderFromDB) {
+//     return { error: true, message: "Order not found" }
+//   }
+//   if (orderFromDB.isDelivered) {
+//     return { error: true, message: "Order already delivered" }
+//   }
+//   const order = mapperOrderToDomain(orderFromDB)
+//   order.deliverAnOrder()
+//   // await this.repository.updateOrderStatusToDelivered(id)
+//   await this.repository.save(order)
+//   return { ...order, isDelivered: true }
+// }
+
 }
