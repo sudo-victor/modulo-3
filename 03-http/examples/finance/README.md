@@ -22,3 +22,9 @@ canceledAt -> Date
 [ ] - Deve ser possivel buscar apenas as transacoes do tipo "deposit"
 [ ] - Deve ser possivel buscar uma transacao pelo id
 [ ] - Deve ser possivel cancelar uma transacao buscando pelo id e atualizando o canceledAt
+
+// Arquitetura -> N-Tier / Camadas
+
+// Interface -> Disponibilizar uma meio de interacao com nosso sistema: Rest API, Soap, GraphQL, CLI, HTML/CSS
+// Lógica -> Regras de negócio / use case / service
+// Dados -> Manipular os dados

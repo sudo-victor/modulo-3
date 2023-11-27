@@ -9,12 +9,15 @@ export function initializeDatabase() {
 }
 
 // // exportar objeto
+// export const nome = "asd"
 // export const sobrenome = "asd"
 // export { sobrenome }
 // // importando
-// import { sobrenome } from "./asd"
-// import qualquernome from "./asd"
-// qualquernome.sobrenome
+// import { sobrenome, nome } from "./asd"
+// import * as qualquernome from "./asd"
+// qualquernome.nome
+// import qualquernome, {asdasdas} from "./asd"
+
 
 // // exportar por padrao
 // const name = "Halluz"
