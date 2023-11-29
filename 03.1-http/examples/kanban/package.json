@@ -1,0 +1,22 @@
+{
+  "name": "kanban",
+  "version": "1.0.0",
+  "description": "## Entidades Tarefa - title -> string[Required] - content -> string[Required] - status -> string[Required] Pendente, Fazendo, Concluido - user -> ObjectId",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0"
+  }
+}
