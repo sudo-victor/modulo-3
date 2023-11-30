@@ -1,10 +1,9 @@
-import { ConfigDatabase } from "../database/ConfigDatabase";
 import { TaskController } from "./controllers/TaskController";
-import { TaskRepository } from "./repositories/TaskRepository";
+import { Task } from "./domain/MongooseTask";
+import { MongooseTaskRepository } from "./repositories/MongooseTaskRepository";
 import { TaskService } from "./services/TaskService";
 
-const { collection } = ConfigDatabase.initialize()
-const repository = new TaskRepository(collection)
+const repository = new MongooseTaskRepository(Task)
 const service = new TaskService(repository)
 const controller = new TaskController(service)
 

@@ -1,4 +1,5 @@
 import { Task, TaskProps } from "../domain/Task";
+import { MongooseTaskRepository } from "../repositories/MongooseTaskRepository";
 import { TaskRepository } from "../repositories/TaskRepository";
 
 interface CreateProps {
@@ -8,7 +9,7 @@ interface CreateProps {
 }
 
 export class TaskService {
-  constructor(private repository: TaskRepository) {}
+  constructor(private repository: MongooseTaskRepository) {}
 
   async create(data: CreateProps) {
     const validStatus = ["pending", "doing", "done"]

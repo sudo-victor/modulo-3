@@ -1,6 +1,9 @@
 import "dotenv/config"
 import express from "express"
 import { taskRoute } from "./routes"
+import { MongooseConfigDatabase } from "./database/MongooseConfigDatabase"
+
+MongooseConfigDatabase.initialize()
 
 const app = express()
 
