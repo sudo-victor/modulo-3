@@ -1,29 +1,3 @@
-# Configurar o ts -> forma simples
-
-### OBS
-npm -> Node Package Manager
-npx -> Node Package eXecute
-
-instalar:
-```
-npm install typescript -D
-```
-
-gerar o arquivo de config typescript
-```
-npx tsc --init
-```
-
-transpilar/traduzir para JS
-```
-npx tsc
-```
-
-executar o arquivo JS
-```
-node [nome do arquivo]
-```
-
 # Configurar o ts
 
 instalar:
