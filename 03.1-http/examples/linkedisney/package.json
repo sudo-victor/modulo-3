@@ -1,0 +1,23 @@
+{
+  "name": "linkedisney",
+  "version": "1.0.0",
+  "description": "# Profile - fullname: string - title: string - bio: string - currentOccupation: string - education: string - certifications: string - status: \"open to work\" | \"closed\" | \"hiring\" - createdAt: date - deletedAt: date | null",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.2",
+    "zod": "^3.22.4"
+  }
+}
