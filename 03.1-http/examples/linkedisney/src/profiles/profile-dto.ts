@@ -6,3 +6,10 @@ export interface CreateProfileDTO {
   certifications?: string
   status: string
 }
+
+export interface PushExperienceDTO {
+  company: string
+  startedAt: Date,
+  endedAt: Date,
+  occupation: string
+}

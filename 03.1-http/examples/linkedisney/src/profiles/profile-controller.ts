@@ -30,4 +30,17 @@ export class ProfileController {
       return res.status(400).json(error)
     }
   }
+
+  async pushNewJobExperience(req: Request, res: Response) {
+    const { body, params } = req
+
+    const result = await this.service.pushExperience(params.profileId, body)
+
+    res.status(200).json(result)
+  }
+
+  async list(req: Request, res: Response) {
+    const result = await this.service.list()
+    res.status(200).json(result)
+  }
 }
