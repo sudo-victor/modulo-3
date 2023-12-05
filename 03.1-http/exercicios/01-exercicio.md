@@ -1,5 +1,10 @@
 # Controle de Estoque
 
+- Typescript
+- Express
+- Mongoose
+- Dotenv
+
 ## Entities
 
 Produto
