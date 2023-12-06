@@ -4,8 +4,12 @@
 Tarefa
 - title -> string[Required]
 - content -> string[Required]
-- status -> string[Required] Pendente, Fazendo,Concluido
+- status -> string[Required] Pendente, Fazendo, Concluido
+- user -> ObjectId
 
+User
+- name -> string[Required, minLength(3)]
+- email -> string[Unique, Required]
 
 ## Functionalidades
 - Deve ser possível criar um usuário, passando: name e email
@@ -15,8 +19,9 @@ Tarefa
 - Deve ser possível listar todas as tarefas pelo id de um usuário
 - Deve ser possível listar todas as tarefas
 
-## Configuracoes
-[x] - Express
+# CONFIG
+
 [x] - Typescript
-[x] - Database
-[x] - Variavel de ambiente - (Seguranca & dados que sao diferentes por ambiente)
+[x] - Express
+[x] - Mongoose
+[x] - Dotenv (NV UMA COISA ASSIM)

@@ -1,13 +1,9 @@
-import "dotenv/config"
 import express from "express"
-import { taskRoute } from "./routes"
-import { MongooseConfigDatabase } from "./database/MongooseConfigDatabase"
-
-MongooseConfigDatabase.initialize()
+import { userRoutes } from "./users/user.route"
 
 const app = express()
 
 app.use(express.json())
-app.use(taskRoute)
+app.use(userRoutes)
 
-app.listen(process.env.PORT, () => console.log("Server is running"))
+export { app }
