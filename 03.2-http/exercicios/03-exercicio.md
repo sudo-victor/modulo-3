@@ -11,5 +11,14 @@ User {
 
 ## Funcionalidades
 
-- Deve ser possível criar um usuário passando: nome, email, password e um arquivo
+- Deve ser possível criar um usuário passando: nome, email e password
+- Deve ser possível obter a credencial de um usuário
 - Deve ser possível listar os usuários
+
+
+[ ] - Typescript
+[ ] - Express
+[ ] - Mongoose
+[ ] - Dotenv
+[ ] - YUP
+[ ] - JWT

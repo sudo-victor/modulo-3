@@ -8,6 +8,11 @@ export class UserRepository {
     return await this.model.findOne({ email })
   }
 
+  async findById(id: string) {
+    return await this.model.findById(id)
+  }
+
+
   async create(data: CreateUserDTO) {
     return await this.model.create(data)
   }
