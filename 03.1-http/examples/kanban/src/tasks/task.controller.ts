@@ -22,6 +22,7 @@ export class TaskController {
   }
 
   async updateStatus(req: Request, res: Response) {
+
     // id da task e status
     // headers, params, query e body
     const { params, body } = req
@@ -37,6 +38,12 @@ export class TaskController {
     }
 
     return res.status(200).json(result)
+  }
+
+  async list(req: Request, res: Response) {
+    const result = await this.service.list()
+
+    res.json(result)
   }
 
 }

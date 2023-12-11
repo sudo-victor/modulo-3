@@ -37,6 +37,10 @@ export class TaskService {
 
     return result
   }
+
+  async list() {
+    return this.taskRepository.findAll()
+  }
 }
 
 // CONTROLLER -> SERVICE -> REPOSITORY

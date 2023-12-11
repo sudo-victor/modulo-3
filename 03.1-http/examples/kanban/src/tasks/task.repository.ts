@@ -18,4 +18,8 @@ export class TaskRepository {
   async updateStatus(taskId: string, status: string) {
     return await this.model.findByIdAndUpdate(taskId, { status }, { new: true }).populate("user")
   }
+
+  async findAll() {
+    return await this.model.find().populate("user")
+  }
 }
