@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt"
+import { hash } from "bcrypt"
 import { IUser } from "./user";
 import { CreateUserDTO } from "./user.dto";
 import { UserRepository } from "./user.repository";
@@ -20,10 +20,8 @@ export class UserService {
 
     const payload = {
       ...data,
-      password: await bcrypt.hash(data.password, 8)
+      password: await hash(data.password, 8)
     }
-
-    // const passwordIsValid = await bcrypt.compare("123456", "$2b$08$d1tPDehrUjdxBSqDYlxDSOzyYVZcmO5SRw69om/pIuPNPCgogQ7Rq")
 
     const result = await this.repository.create(payload)
 

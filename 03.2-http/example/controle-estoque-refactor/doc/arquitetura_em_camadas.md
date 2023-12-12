@@ -4,8 +4,8 @@
 
 Definiao do meio de comunicacao com o nosso sistema
 
-Routas
-Controllers
+Routas -> POST -> /products
+Controllers -> Funcao que será executada quando uma rota for chamada
 
 ## Lógica
 
