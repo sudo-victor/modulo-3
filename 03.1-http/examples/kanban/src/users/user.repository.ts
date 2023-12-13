@@ -12,7 +12,6 @@ export class UserRepository {
     return await this.model.findById(id)
   }
 
-
   async create(data: CreateUserDTO) {
     return await this.model.create(data)
   }

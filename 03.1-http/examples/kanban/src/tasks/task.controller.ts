@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
 import { TaskService } from "./task.service";
+import { UserNotFoundError } from "../shared/errors/user-not-found.error";
+import { HTTP_STATUS } from "../shared/enums/http-status.enum";
 
 export class TaskController {
   constructor(private service: TaskService) {}
@@ -13,12 +15,19 @@ export class TaskController {
       userId: params.userId
     }
 
-    const result = await this.service.create(payload)
-    if ((result as { error: boolean }).error) {
-      return res.status((result as { status: number }).status).json(result)
-    }
+    try {
+      const result = await this.service.create(payload)
+      
+      return res.status(HTTP_STATUS.CREATED).json(result)
+    } catch (err: any) {
+      if (err instanceof UserNotFoundError) {
+        return res.status(HTTP_STATUS.NOT_FOUND_ERROR).json({ 
+          message: err.message
+        })
+      }
 
-    return res.status(201).json(result)
+      return res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({ message: "Internal server error" })
+    }
   }
 
   async updateStatus(req: Request, res: Response) {
@@ -45,5 +54,5 @@ export class TaskController {
 
     res.json(result)
   }
-
 }
+

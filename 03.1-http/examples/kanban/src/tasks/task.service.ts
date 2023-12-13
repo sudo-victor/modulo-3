@@ -1,3 +1,4 @@
+import { UserNotFoundError } from "../shared/errors/user-not-found.error";
 import { UserRepository } from "../users/user.repository";
 import { CreateTaskDTO, UpdateTaskStatusDTO } from "./task.dto";
 import { TaskRepository } from "./task.repository";
@@ -11,11 +12,7 @@ export class TaskService {
   async create(data: CreateTaskDTO) {
     const user = await this.userRepository.findById(data.userId)
     if (!user) {
-      return {
-        error: true,
-        message: "User not found",
-        status: 404
-      }
+      throw new UserNotFoundError()
     }
 
     const result = await this.taskRepository.create(data)

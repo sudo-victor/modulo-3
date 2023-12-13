@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
-import { CreateUserResponse, UserService } from "./user.service";
+import { UserService } from "./user.service";
+import { UserAlreadyExistsError } from "../shared/errors/user-already-exists.error";
+import { HTTP_STATUS } from "../shared/enums/http-status.enum";
 
 export class UserController {
   constructor(private service: UserService) {}
@@ -7,12 +9,17 @@ export class UserController {
   async create(req: Request, res: Response) {
     const { body } = req
 
-    const result = await this.service.create(body)
-    if ((result as CreateUserResponse).error) {
-      return res.status((result as CreateUserResponse).status).json(result)
-    }
+    try {
+      const result = await this.service.create(body)
 
-    res.status(201).json(result)
+      res.status(HTTP_STATUS.CREATED).json(result)
+    } catch (err: any) {
+      if (err instanceof UserAlreadyExistsError) {
+        return res.status(HTTP_STATUS.BAD_REQUEST).json({ message: err.message })
+      }
+
+      return res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({ message: "Internal server error" })
+    }
   }
 
 }
