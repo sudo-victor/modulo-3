@@ -16,5 +16,9 @@ export class UserRepository {
     return await this.model.create(data)
   }
 
+  async updatePhoto(id: string, photo: string) {
+    return this.model.findByIdAndUpdate(id, { photo }, { new: true })
+  }
+
 }
 // Service -> Repository -> model

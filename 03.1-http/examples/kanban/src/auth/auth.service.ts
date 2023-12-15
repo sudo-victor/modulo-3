@@ -38,7 +38,7 @@ export class AuthService {
      */
     const payload = { id: user.id, email: user.email }
     const secretKey = env.JWT_SECRET_KEY
-    const options = { expiresIn: '5m' }
+    const options = { expiresIn: '1h' }
 
     const token = sign(payload, secretKey, options)
 

@@ -1,8 +1,10 @@
+import * as yup from "yup"
 import { Request, Response } from "express";
 import { TaskService } from "./task.service";
 import { UserNotFoundError } from "../shared/errors/user-not-found.error";
 import { HTTP_STATUS } from "../shared/enums/http-status.enum";
-
+import { createTaskValidateSchema } from "./task.validate-schema";
+// throw new Error
 export class TaskController {
   constructor(private service: TaskService) {}
 
@@ -13,6 +15,14 @@ export class TaskController {
       title: body.title,
       content: body.content,
       userId: params.userId
+    }
+
+    try {
+      await createTaskValidateSchema().validate(payload)
+    } catch (err: any) {
+      return res.status(HTTP_STATUS.CLIENTE_FEZ_M).json({
+        messages: err.errors
+      })
     }
 
     try {
