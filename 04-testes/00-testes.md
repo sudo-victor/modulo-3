@@ -22,3 +22,6 @@ Testes de Desempenho:
 Os testes de desempenho medem e avaliam o desempenho do sistema em diferentes condições, como carga de trabalho pesada, tráfego intenso ou grande volume de dados. Eles são usados para identificar gargalos de desempenho, tempos de resposta lentos ou vazamentos de recursos.
 
 Esses são apenas alguns exemplos dos tipos de testes que podem ser realizados em JavaScript. A escolha dos tipos de testes a serem aplicados depende do contexto e dos requisitos do projeto. É comum combinar diferentes tipos de testes para obter uma cobertura mais abrangente e garantir a qualidade do software.
+
+vitest
+jest
