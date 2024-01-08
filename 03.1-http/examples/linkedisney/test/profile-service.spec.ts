@@ -1,60 +1,161 @@
-import { it, expect } from "vitest"
 import { randomUUID } from "node:crypto"
+import { describe, it, beforeEach, expect, vi } from "vitest"
 import { ProfileService } from "../src/profiles/profile-service"
 import { CreateProfileDTO } from "../src/profiles/profile-dto"
 import { ProfileRepository } from "../src/profiles/profile-repository"
 import { JobRepository } from "../src/jobs/job-repository"
+// it/test -> test case -> caso de teste
+// describe -> Separar os test cases em contexto
+// expect -> Asserçao -> Assert -> Valida se o resultado é como esperado
+// spyOn -> Observa todo o comportamento de uma funcao em um test case
 
-// TDD -> 
 const profileRepositoryFake = {
-  create: (profile: CreateProfileDTO) => {
-    return { id: randomUUID(),...profile}
+  create: async (profile: CreateProfileDTO) => {
+    return { ...profile, id: randomUUID() }
   },
   findById: (id: string) => {
-    return {}
+    return {
+      id: "id-fake",
+      fullname: "Tazio Arruda",
+      bio: "",
+      currentOccupation: "Garoto de progama JS",
+      education: "Arnia",
+      status: "open_to_work",
+      job: [],
+    }
   },
-  pushJob: (userId: string, jobId: string) => {
-    return {}
+  pushJob(userId: string, jobId: string) {
+    return {
+      id: "id-fake",
+      fullname: "Tazio Arruda",
+      bio: "",
+      currentOccupation: "Garoto de progama JS",
+      education: "Arnia",
+      status: "open_to_work",
+      job: [jobId],
+    }
   },
-  findAll: async () => {
-    return []
+  findAll: () => {
+    return [
+      {
+        id: "id-fake",
+        fullname: "Tazio Arruda",
+        bio: "",
+        currentOccupation: "Garoto de progama JS",
+        education: "Arnia",
+        status: "open_to_work",
+        job: [],
+      }
+    ]
   }
 } as unknown as ProfileRepository
 const jobRepositoryFake = {
-  create: async (job: any) => {}
-} as any as JobRepository
-
-it("should be able to create a profile", async () => {
-  const profileService = new ProfileService(profileRepositoryFake, jobRepositoryFake)
-  const params = {
-    fullname: "Tazio Arruda",
-    bio: "",
-    currentOccupation: "Dev",
-    education: "Arnia",
-    certifications: "",
-    status: "open to work"
+  create: (job: any) => {
+    return {
+      id: randomUUID(),
+      company: job.company,
+      startedAt: job.startedAt,
+      endedAt: job.endedAt,
+      occupation: job.occupation
+    }
   }
+} as unknown as JobRepository
+let profileService: ProfileService;
 
-  const result = await profileService.create(params) as any
+describe("Profile Service", () => {
+  beforeEach(() => {
+    profileService = new ProfileService(profileRepositoryFake, jobRepositoryFake)
+  })
 
-  expect(result.id).toBeDefined()
-  expect(result.fullname).toBe("Tazio Arruda")
-})
+  describe("Create Profile", () => {
+    it("should be able to create a profile", async () => {
+      // Arrange -> Preparar o nosso teste
+      const paramsDummy = {
+        fullname: "Wafiter",
+        bio: "",
+        currentOccupation: "Dev",
+        education: "Arnia",
+        certifications: "Arnia",
+        status: "open to work"
+      } as CreateProfileDTO
 
-it("should not be able to create a profile if status is invalid", async () => {
-  const profileService = new ProfileService(profileRepositoryFake, jobRepositoryFake)
-  const params = {
-    fullname: "Tazio Arruda",
-    bio: "",
-    currentOccupation: "Dev",
-    education: "Arnia",
-    certifications: "",
-    status: "invalid_status_error"
-  }
+      // Act -> Executar o teste
+      const result = (await profileService.create(paramsDummy)) as any
 
-  const result = await profileService.create(params) as any
+      // Assert -> Validar se o que estamos testando funcionou como esperado
+      expect(result.id).toBeDefined()
+    })
 
-  expect(result.error).toBeTruthy()
-  expect(result.message).toBe("Invalid status")
-  expect(result.status).toBe(400)
+    it("should not be able to create a profile with invalid status", async () => {
+      // Arrange -> Preparar o nosso teste
+      const paramsDummy = {
+        fullname: "Wafiter",
+        bio: "",
+        currentOccupation: "Dev",
+        education: "Arnia",
+        certifications: "Arnia",
+        status: "invalid status"
+      } as CreateProfileDTO
+
+      // Act -> Executar o teste
+      const result = (await profileService.create(paramsDummy)) as any
+
+      // Assert -> Validar se o que estamos testando funcionou como esperado
+      expect(result.message).toBe("Invalid status")
+      expect(result.error).toBeTruthy()
+      expect(result.status).toEqual(400)
+    })
+  })
+
+  describe("Push Experience", () => {
+    it("should be able to add a new experience job", async () => {
+      // Arrange -> Preparar o necessário para executar o teste
+      const userIdDummy = "user-id"
+      const jobDummy = {
+        company: "iFood",
+        startedAt: new Date("2023-01-01"),
+        endedAt: new Date(),
+        occupation: "Dev"
+      }
+      vi.spyOn(profileRepositoryFake, "findById").mockResolvedValue({
+        id: "id-fake",
+        fullname: "Tazio Arruda",
+        bio: "",
+        currentOccupation: "Garoto de progama JS",
+        education: "Arnia",
+        status: "open to work",
+        job: [],
+      } as any)
+
+      // Act -> Execucao
+      const result = await profileService.pushExperience(userIdDummy, jobDummy) as any
+
+      // Assert -> Esperado
+      expect(result.id).toBeDefined()
+      expect(result.job).toHaveLength(1)
+    })
+
+    it("should not be able to add a new experience if user not found", async() => {
+        // Arrange -> Preparar o necessário para executar o teste
+        const userIdDummy = "user-id"
+        const jobDummy = {
+          company: "iFood",
+          startedAt: new Date("2023-01-01"),
+          endedAt: new Date(),
+          occupation: "Dev"
+        }
+        vi.spyOn(profileRepositoryFake, "findById").mockResolvedValue(null)
+  
+        // Act -> Execucao
+        const result = await profileService.pushExperience(userIdDummy, jobDummy) as any
+
+        // Assert -> Esperado
+        const expected = {
+          error: true,
+          message: "User not found",
+          status: 404
+        }
+        expect(result).toEqual(expected)
+    })
+  })
 })

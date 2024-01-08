@@ -25,3 +25,22 @@ segue lá: https://www.linkedin.com/in/victor-de-souto-soares-4811b118a/
 [x] - Dotenv
 [x] - Express
 [x] - Mongoose
+
+
+## Teste
+
+[x] - Dummy
+[x] - Stub
+[ ] - Spy
+[x] - Fake
+[ ] - Mock
+[ ] - InMemory
+[ ] - Teste de integraçao
+
+
+.test.ts
+.spec.ts
+
+// mockResolvedValue -> (return)retornar uma funcao promise(async/await)
+// mockRejectedValue -> (throw)lançar um exception
+// mockReturnValue -> (return) returnar uma funcao sync
