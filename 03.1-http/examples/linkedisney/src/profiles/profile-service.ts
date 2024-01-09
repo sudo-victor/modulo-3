@@ -1,10 +1,11 @@
 import { JobRepository } from "../jobs/job-repository";
+import { IProfileRepositoryPort } from "../ports/profile-repository-port";
 import { CreateProfileDTO, PushExperienceDTO } from "./profile-dto";
-import { ProfileRepository } from "./profile-repository";
+import { ProfileRepositoryMongo } from "./profile-repository";
 
 export class ProfileService {
   constructor(
-    private repository: ProfileRepository,
+    private repository: IProfileRepositoryPort,
     private jobRepository: JobRepository
   ) {}
 
@@ -39,7 +40,7 @@ export class ProfileService {
 
   async list() {
     return await this.repository.findAll()
-  }
+  } 
 
   private doesStatusIsValid(status: string) {
     if (!status) return true

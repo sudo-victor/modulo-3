@@ -1,7 +1,8 @@
+import { IProfileRepositoryPort } from "../ports/profile-repository-port";
 import { Profile } from "./profile-domain";
 import { CreateProfileDTO } from "./profile-dto";
 
-export class ProfileRepository {
+export class ProfileRepositoryMongo implements IProfileRepositoryPort {
   constructor(private model: typeof Profile) {}
 
   async create(profile: CreateProfileDTO) {

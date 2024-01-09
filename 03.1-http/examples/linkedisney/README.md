@@ -31,11 +31,14 @@ segue lá: https://www.linkedin.com/in/victor-de-souto-soares-4811b118a/
 
 [x] - Dummy
 [x] - Stub
-[ ] - Spy
+[x] - Spy
 [x] - Fake
+[x] - SUT -> System under test
+
 [ ] - Mock
-[ ] - InMemory
+[ ] - InMemory Database
 [ ] - Teste de integraçao
+
 
 
 .test.ts
@@ -44,3 +47,14 @@ segue lá: https://www.linkedin.com/in/victor-de-souto-soares-4811b118a/
 // mockResolvedValue -> (return)retornar uma funcao promise(async/await)
 // mockRejectedValue -> (throw)lançar um exception
 // mockReturnValue -> (return) returnar uma funcao sync
+
+# N-tier 
+
+Apresentaçao : controller rotas
+Lógica: service
+Dados: Repo banco...
+
+# Port/Adapter -> Hexagonal
+
+Port -> Tomadas
+
